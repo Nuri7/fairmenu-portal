@@ -1,0 +1,31 @@
+{
+  "vendor": {
+    "name": "Morning Owl Coffee",
+    "slug": "morning-owl-coffee",
+    "currency": "EUR",
+    "locale": "nl-NL"
+  },
+  "location": {
+    "address": "Zeedijk 71, 1012 AS Amsterdam",
+    "area": "De Wallen / Nieuwmarkt",
+    "city": "Amsterdam",
+    "lat": 52.3735,
+    "lng": 4.9007,
+    "phone": "",
+    "hours": {
+      "mon": "closed",
+      "tue": "08:00-16:00",
+      "wed": "08:00-16:00",
+      "thu": "08:00-16:00",
+      "fri": "08:00-16:00",
+      "sat": "09:00-16:00",
+      "sun": "09:00-16:00"
+    }
+  },
+  "menu_status": "coming_soon",
+  "prices_verified": false,
+  "photo_provider": "flux-pro",
+  "photo_style": "bright airy Amsterdam specialty coffee bar, natural window light, minimalist third-wave aesthetic, professional photography, 4K",
+  "categories": [],
+  "items": []
+}

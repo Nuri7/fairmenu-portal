@@ -1,0 +1,31 @@
+{
+  "vendor": {
+    "name": "Drupa Coffee Roasters",
+    "slug": "drupa-coffee-roasters",
+    "currency": "EUR",
+    "locale": "nl-NL"
+  },
+  "location": {
+    "address": "Eerste Anjeliersdwarsstraat 16A, 1015 NR Amsterdam",
+    "area": "Jordaan",
+    "city": "Amsterdam",
+    "lat": 52.3768,
+    "lng": 4.8829,
+    "phone": "+31 20 331 2182",
+    "hours": {
+      "mon": "closed",
+      "tue": "09:00-17:30",
+      "wed": "09:00-17:30",
+      "thu": "09:00-17:30",
+      "fri": "09:00-17:30",
+      "sat": "10:00-17:30",
+      "sun": "10:00-17:30"
+    }
+  },
+  "menu_status": "coming_soon",
+  "prices_verified": false,
+  "photo_provider": "flux-pro",
+  "photo_style": "bright airy Amsterdam specialty coffee bar, natural window light, minimalist third-wave aesthetic, professional photography, 4K",
+  "categories": [],
+  "items": []
+}

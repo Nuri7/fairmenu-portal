@@ -1,72 +1,90 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nl">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/png" href="logo.png" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <title>Choicemaker Directory</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/lucide-static@0.321.0/font/lucide.min.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    <meta name="theme-color" content="#4A5D23" />
+    <meta name="description" content="Ontdek cafés en restaurants, bekijk menu's en bestel via FairMenu." />
+    <!-- iOS home-screen install -->
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="FairMenu" />
+    <title>FairMenu</title>
   </head>
   <body>
     <div id="app">
       <!-- Header -->
       <header class="app-header">
-        <h1>Choicemaker</h1>
-        <i class="icon-lucide" data-lucide="search"></i>
+        <h1>FairMenu</h1>
+        <span id="placeCount" class="app-header__count" aria-live="polite"></span>
       </header>
 
-      <!-- Hero Section -->
-      <section class="hero">
-        <h2>Find your sanctuary.</h2>
-        <div class="search-bar">
-          <i class="icon-lucide" data-lucide="search"></i>
-          <input type="text" id="searchInput" placeholder="Search neighborhoods or shops..." />
+      <!-- Search floats over the map -->
+      <div class="map-search">
+        <svg class="icon-lucide" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+          <circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/>
+        </svg>
+        <input type="text" id="searchInput" placeholder="Zoek café of buurt in Amsterdam..." />
+        <button id="searchClear" class="map-search__clear" hidden aria-label="Wissen">&times;</button>
+      </div>
+      <div class="map-chips">
+        <button id="verifiedFilter" class="verified-filter" type="button" aria-pressed="false">
+          <span class="verified-filter__dot"></span> Alleen echte menu's
+        </button>
+        <button id="discountFilter" class="discount-filter" type="button" aria-pressed="false">
+          <span class="discount-filter__dot"></span> Met korting
+        </button>
+      </div>
+
+      <!-- Map (the home view) -->
+      <section class="map-view" id="mapView"></section>
+
+      <!-- Zwevende kaartknop linksonder: de Leaflet-controls zitten bottomright -->
+      <div class="map-fabs">
+        <button id="locateBtn" class="locate-btn" type="button"
+                aria-pressed="false" aria-label="Zoek zaken in mijn buurt">
+          <!-- Inline SVG: mag niet van de lucide-CDN afhangen (createIcons draait één keer) -->
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+               stroke-linecap="round" aria-hidden="true">
+            <path d="M2 12h3M19 12h3M12 2v3M12 19v3"/>
+            <circle cx="12" cy="12" r="7"/>
+            <circle cx="12" cy="12" r="3" fill="currentColor" stroke="none"/>
+          </svg>
+        </button>
+        <p id="geoStatus" class="geo-status" role="status" hidden></p>
+        <!-- Wrapt als eigen rij bóven de locatieknop (order:-1), zodat de twee
+             elkaar nooit verdringen. JS bepaalt of dit ooit zichtbaar wordt. -->
+        <div id="installHint" class="install-hint" hidden>
+          <span class="install-hint__text">Zet FairMenu op je beginscherm</span>
+          <button class="install-hint__btn" type="button">Installeren</button>
+          <button class="install-hint__close" type="button" aria-label="Niet nu">&times;</button>
         </div>
-      </section>
-
-      <!-- Filter Categories -->
-      <section class="filter-carousel">
-        <button class="filter-pill active" data-category="all">All Experiences</button>
-        <button class="filter-pill" data-category="Tea Houses">Tea Houses</button>
-        <button class="filter-pill" data-category="Dessert">Dessert</button>
-        <button class="filter-pill" data-category="Bars">Bars</button>
-        <button class="filter-pill" data-category="Cafes">Cafes</button>
-        <button class="filter-pill" data-category="Restaurants">Restaurants</button>
-      </section>
-
-      <!-- Main Content (Cards) -->
-      <main class="shop-list" id="shopList">
-        <!-- Cards injected via JS -->
-      </main>
+      </div>
 
       <!-- Bottom Navigation -->
       <nav class="bottom-nav">
-        <a href="#" class="nav-item active">
-          <i class="icon-lucide" data-lucide="compass"></i>
-          <span>Directory</span>
+        <a href="#" class="nav-item active" data-view="map">
+          <svg class="icon-lucide" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="m3 6 6-3 6 3 6-3v15l-6 3-6-3-6 3z"/><path d="M9 3v15M15 6v15"/>
+          </svg>
+          <span>Kaart</span>
         </a>
-        <a href="#" class="nav-item">
-          <i class="icon-lucide" data-lucide="map"></i>
-          <span>Map</span>
+        <a href="#" class="nav-item" data-view="favorites">
+          <svg class="icon-lucide" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8l1.1 1.1L12 21l7.8-7.5 1.1-1.1a5.5 5.5 0 0 0-.1-7.8z"/>
+          </svg>
+          <span>Favorieten</span>
         </a>
-        <a href="#" class="nav-item">
-          <i class="icon-lucide" data-lucide="menu"></i>
-          <span>Favorites</span>
-        </a>
-        <a href="#" class="nav-item">
-          <i class="icon-lucide" data-lucide="user"></i>
-          <span>Profile</span>
+        <a href="#" class="nav-item" data-view="profile">
+          <svg class="icon-lucide" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/>
+          </svg>
+          <span>Profiel</span>
         </a>
       </nav>
     </div>
     <script type="module" src="/main.js"></script>
-    <!-- Lucide Icons script -->
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <script>
-      lucide.createIcons();
-    </script>
   </body>
 </html>

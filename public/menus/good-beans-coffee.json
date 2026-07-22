@@ -1,0 +1,31 @@
+{
+  "vendor": {
+    "name": "Good Beans Coffee",
+    "slug": "good-beans-coffee",
+    "currency": "EUR",
+    "locale": "nl-NL"
+  },
+  "location": {
+    "address": "Binnen Oranjestraat 4, 1013 JA Amsterdam",
+    "area": "Haarlemmerbuurt (Gouden Reael), Centrum",
+    "city": "Amsterdam",
+    "lat": 52.386,
+    "lng": 4.8925,
+    "phone": "+31 6 24471218",
+    "hours": {
+      "mon": "08:00-18:00",
+      "tue": "08:00-18:00",
+      "wed": "08:00-18:00",
+      "thu": "08:00-18:00",
+      "fri": "08:00-18:00",
+      "sat": "09:00-18:00",
+      "sun": "10:00-17:00"
+    }
+  },
+  "menu_status": "coming_soon",
+  "prices_verified": false,
+  "photo_provider": "flux-pro",
+  "photo_style": "bright airy Amsterdam specialty coffee bar, natural window light, minimalist third-wave aesthetic, professional photography, 4K",
+  "categories": [],
+  "items": []
+}

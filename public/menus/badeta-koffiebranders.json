@@ -1,0 +1,31 @@
+{
+  "vendor": {
+    "name": "Badeta Koffiebranders",
+    "slug": "badeta-koffiebranders",
+    "currency": "EUR",
+    "locale": "nl-NL"
+  },
+  "location": {
+    "address": "Tweede van der Helststraat 18H, 1072 PD Amsterdam",
+    "area": "De Pijp (Nieuwe Pijp)",
+    "city": "Amsterdam",
+    "lat": 52.3535,
+    "lng": 4.893,
+    "phone": "+31 20 752 0289",
+    "hours": {
+      "mon": "07:30-18:00",
+      "tue": "07:30-18:00",
+      "wed": "07:30-18:00",
+      "thu": "07:30-18:00",
+      "fri": "07:30-18:00",
+      "sat": "07:30-18:00",
+      "sun": "07:30-18:00"
+    }
+  },
+  "menu_status": "coming_soon",
+  "prices_verified": false,
+  "photo_provider": "flux-pro",
+  "photo_style": "bright airy Amsterdam specialty coffee bar, natural window light, minimalist third-wave aesthetic, professional photography, 4K",
+  "categories": [],
+  "items": []
+}

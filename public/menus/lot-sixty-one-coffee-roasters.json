@@ -1,0 +1,31 @@
+{
+  "vendor": {
+    "name": "Lot Sixty One Coffee Roasters",
+    "slug": "lot-sixty-one-coffee-roasters",
+    "currency": "EUR",
+    "locale": "nl-NL"
+  },
+  "location": {
+    "address": "Kinkerstraat 112, 1053 ED Amsterdam",
+    "area": "Oud-West",
+    "city": "Amsterdam",
+    "lat": 52.3648,
+    "lng": 4.8695,
+    "phone": "+31 6 16054227",
+    "hours": {
+      "mon": "08:00-18:00",
+      "tue": "08:00-18:00",
+      "wed": "08:00-18:00",
+      "thu": "08:00-18:00",
+      "fri": "08:00-18:00",
+      "sat": "09:00-18:00",
+      "sun": "09:00-18:00"
+    }
+  },
+  "menu_status": "coming_soon",
+  "prices_verified": false,
+  "photo_provider": "flux-pro",
+  "photo_style": "bright airy Amsterdam specialty coffee bar, natural window light, minimalist third-wave aesthetic, professional photography, 4K",
+  "categories": [],
+  "items": []
+}

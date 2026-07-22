@@ -1,0 +1,609 @@
+{
+  "vendor": {
+    "name": "The Stroopist",
+    "slug": "stroopist",
+    "currency": "EUR",
+    "locale": "nl-NL"
+  },
+  "photo_provider": "flux-pro",
+  "photo_style": "cozy Amsterdam café, warm daylight, rustic wooden table, artisanal stroopwafels and specialty coffee, shallow depth of field, food photography, 4K",
+  "categories": [
+    {
+      "id": "coffee",
+      "name": "Coffee"
+    },
+    {
+      "id": "iced-coffee",
+      "name": "Iced Coffee"
+    },
+    {
+      "id": "specialty-coffee",
+      "name": "Specialty Coffee"
+    },
+    {
+      "id": "matcha-hojicha",
+      "name": "Matcha & Hojicha"
+    },
+    {
+      "id": "indian-chai",
+      "name": "Indian Chai"
+    },
+    {
+      "id": "stroopwafels",
+      "name": "Stroopwafels"
+    },
+    {
+      "id": "waffles",
+      "name": "Waffles"
+    },
+    {
+      "id": "cold-drinks",
+      "name": "Cold Drinks"
+    },
+    {
+      "id": "fresh-smoothies",
+      "name": "Fresh Smoothies"
+    },
+    {
+      "id": "toppings-sauces",
+      "name": "Toppings & Sauces"
+    },
+    {
+      "id": "breakfast-lunch",
+      "name": "Breakfast & Lunch"
+    },
+    {
+      "id": "pastries",
+      "name": "Pastries"
+    }
+  ],
+  "items": [
+    {
+      "id": "espresso",
+      "name": "Espresso",
+      "category": "coffee",
+      "price": 3,
+      "description": "",
+      "photo_prompt_hint": "overhead close-up of a plain single espresso, uniform dark hazelnut-brown crema filling a tiny ristretto cup, glossy smooth surface, straight black coffee"
+    },
+    {
+      "id": "espresso-macchiato",
+      "name": "Espresso Macchiato",
+      "category": "coffee",
+      "price": 3.5,
+      "description": "",
+      "photo_prompt_hint": "espresso in a small cup marked with a single dollop of milk foam"
+    },
+    {
+      "id": "americano",
+      "name": "Americano",
+      "category": "coffee",
+      "price": 4,
+      "description": "",
+      "photo_prompt_hint": "tall clear glass of black americano coffee, translucent deep brown, thin pale crema on top, long black coffee"
+    },
+    {
+      "id": "cortado",
+      "name": "Cortado",
+      "category": "coffee",
+      "price": 4,
+      "description": "",
+      "photo_prompt_hint": "cortado in a small glass, equal parts espresso and steamed milk, thin layer"
+    },
+    {
+      "id": "latte",
+      "name": "Latte",
+      "category": "coffee",
+      "price": 4.5,
+      "description": "",
+      "photo_prompt_hint": "tall cafe latte, smooth milk, leaf latte art on top, glass or mug"
+    },
+    {
+      "id": "flat-white",
+      "name": "Flat White",
+      "category": "coffee",
+      "price": 4.5,
+      "description": "",
+      "photo_prompt_hint": "flat white coffee, velvety microfoam, small tulip latte art, ceramic cup"
+    },
+    {
+      "id": "mocha",
+      "name": "Mocha",
+      "category": "coffee",
+      "price": 5,
+      "description": "",
+      "photo_prompt_hint": "chocolate mocha coffee topped with whipped cream and cocoa dusting"
+    },
+    {
+      "id": "cappuccino",
+      "name": "Cappuccino",
+      "category": "coffee",
+      "price": 5,
+      "description": "",
+      "photo_prompt_hint": "cappuccino with thick foamy top and cocoa powder dusting, ceramic cup"
+    },
+    {
+      "id": "brown-sugar-latte",
+      "name": "Brown Sugar Latte",
+      "category": "coffee",
+      "price": 5.5,
+      "description": "",
+      "photo_prompt_hint": "latte with brown sugar syrup drizzle swirled through the milk foam"
+    },
+    {
+      "id": "hot-chocolate",
+      "name": "Hot Chocolate",
+      "category": "coffee",
+      "price": 6,
+      "description": "",
+      "photo_prompt_hint": "rich hot chocolate topped with whipped cream and chocolate shavings"
+    },
+    {
+      "id": "iced-americano",
+      "name": "Iced Americano",
+      "category": "iced-coffee",
+      "price": 5,
+      "description": "",
+      "photo_prompt_hint": "iced americano, black coffee over ice cubes in a tall clear glass, condensation"
+    },
+    {
+      "id": "iced-latte",
+      "name": "Iced Latte",
+      "category": "iced-coffee",
+      "price": 6.5,
+      "description": "",
+      "photo_prompt_hint": "iced latte, espresso poured over milk and ice, tall glass, layered look"
+    },
+    {
+      "id": "iced-mocha",
+      "name": "Iced Mocha",
+      "category": "iced-coffee",
+      "price": 7,
+      "description": "",
+      "photo_prompt_hint": "iced mocha over ice, chocolate swirl, whipped cream, tall glass"
+    },
+    {
+      "id": "iced-mocha-or-iced-mocha-white",
+      "name": "Iced Mocha or Iced Mocha White",
+      "category": "iced-coffee",
+      "price": 7.5,
+      "description": "",
+      "photo_prompt_hint": "iced white mocha over ice, pale creamy chocolate, tall glass, whipped cream"
+    },
+    {
+      "id": "iced-caramel-latte",
+      "name": "Iced Caramel Latte",
+      "category": "iced-coffee",
+      "price": 7.5,
+      "description": "",
+      "photo_prompt_hint": "iced caramel latte over ice, caramel drizzle down the glass, tall glass"
+    },
+    {
+      "id": "iced-vanilla-latte",
+      "name": "Iced Vanilla Latte",
+      "category": "iced-coffee",
+      "price": 7.5,
+      "description": "",
+      "photo_prompt_hint": "iced vanilla latte over ice, creamy pale coffee, tall glass"
+    },
+    {
+      "id": "iced-pistachio-latte",
+      "name": "Iced Pistachio Latte",
+      "category": "iced-coffee",
+      "price": 7.5,
+      "description": "",
+      "photo_prompt_hint": "iced pistachio latte, soft green tint, crushed pistachio on top, tall glass"
+    },
+    {
+      "id": "v60-filter-coffee",
+      "name": "V60 Filter Coffee",
+      "category": "specialty-coffee",
+      "price": 6.5,
+      "description": "",
+      "photo_prompt_hint": "pour-over V60 filter coffee, clear black coffee in a glass carafe and cup"
+    },
+    {
+      "id": "cold-brew",
+      "name": "Cold Brew",
+      "category": "specialty-coffee",
+      "price": 7.5,
+      "description": "",
+      "photo_prompt_hint": "cold brew coffee over ice, dark and smooth, tall glass, condensation"
+    },
+    {
+      "id": "spanish-latte",
+      "name": "Spanish Latte",
+      "category": "specialty-coffee",
+      "price": 6.5,
+      "description": "",
+      "photo_prompt_hint": "spanish latte, espresso with sweet condensed milk, caramel colour, glass"
+    },
+    {
+      "id": "matcha-latte",
+      "name": "Matcha Latte",
+      "category": "matcha-hojicha",
+      "price": 6.5,
+      "description": "",
+      "photo_prompt_hint": "matcha latte, vibrant green tea over milk, latte art, glass"
+    },
+    {
+      "id": "matcha-vanilla",
+      "name": "Matcha Vanilla",
+      "category": "matcha-hojicha",
+      "price": 7.5,
+      "description": "",
+      "photo_prompt_hint": "vanilla matcha latte, bright green with pale vanilla milk layers, glass"
+    },
+    {
+      "id": "matcha-strawberry",
+      "name": "Matcha Strawberry",
+      "category": "matcha-hojicha",
+      "price": 7.5,
+      "description": "",
+      "photo_prompt_hint": "strawberry matcha latte, layers of pink strawberry, milk and green matcha, glass"
+    },
+    {
+      "id": "matcha-mango",
+      "name": "Matcha Mango",
+      "category": "matcha-hojicha",
+      "price": 7.5,
+      "description": "",
+      "photo_prompt_hint": "mango matcha latte, orange mango and green matcha layers, tall glass"
+    },
+    {
+      "id": "hojicha-latte",
+      "name": "Hojicha Latte",
+      "category": "matcha-hojicha",
+      "price": 6.5,
+      "description": "",
+      "photo_prompt_hint": "hojicha latte, roasted brown Japanese tea with milk, cosy tone, glass"
+    },
+    {
+      "id": "chai-latte",
+      "name": "Chai Latte",
+      "category": "indian-chai",
+      "price": 6,
+      "description": "",
+      "photo_prompt_hint": "chai latte, spiced amber tea with frothed milk, cinnamon dusting, mug"
+    },
+    {
+      "id": "chai-masala",
+      "name": "Chai Masala",
+      "category": "indian-chai",
+      "price": 6,
+      "description": "",
+      "photo_prompt_hint": "masala chai, spiced milky tea, star anise and cinnamon stick, glass cup"
+    },
+    {
+      "id": "chai-vanilla",
+      "name": "Chai Vanilla",
+      "category": "indian-chai",
+      "price": 6,
+      "description": "",
+      "photo_prompt_hint": "vanilla chai latte, spiced tea with creamy vanilla milk, mug"
+    },
+    {
+      "id": "chai-lemon-grass",
+      "name": "Chai Lemon Grass",
+      "category": "indian-chai",
+      "price": 7,
+      "description": "",
+      "photo_prompt_hint": "lemongrass chai, fragrant spiced tea with a lemongrass stalk, glass"
+    },
+    {
+      "id": "dirty-chai",
+      "name": "Dirty Chai",
+      "category": "indian-chai",
+      "price": 7,
+      "description": "",
+      "photo_prompt_hint": "dirty chai, spiced chai latte with an espresso shot, layered, glass"
+    },
+    {
+      "id": "stroopwafel",
+      "name": "Stroopwafel",
+      "category": "stroopwafels",
+      "price": 7,
+      "description": "Classic",
+      "photo_prompt_hint": "classic Dutch stroopwafel, golden waffle with caramel syrup filling, on a plate"
+    },
+    {
+      "id": "strawberry-cup",
+      "name": "Strawberry Cup",
+      "category": "stroopwafels",
+      "price": 8,
+      "description": "",
+      "photo_prompt_hint": "stroopwafel pieces in a cup with fresh strawberries and cream"
+    },
+    {
+      "id": "dubai-cup",
+      "name": "Dubai Cup",
+      "category": "stroopwafels",
+      "price": 13.5,
+      "description": "",
+      "photo_prompt_hint": "indulgent dessert cup with stroopwafel, pistachio cream and chocolate, Dubai-style"
+    },
+    {
+      "id": "strawberry-choco",
+      "name": "Strawberry Choco",
+      "category": "stroopwafels",
+      "price": 10,
+      "description": "",
+      "photo_prompt_hint": "stroopwafel dessert with fresh strawberries and melted chocolate drizzle"
+    },
+    {
+      "id": "waffle",
+      "name": "Waffle",
+      "category": "waffles",
+      "price": 6.5,
+      "description": "Classic",
+      "photo_prompt_hint": "classic Belgian waffle, golden and crisp, light dusting of icing sugar, plate"
+    },
+    {
+      "id": "waffle-ice-cream-and-sauce",
+      "name": "Waffle Ice Cream and Sauce",
+      "category": "waffles",
+      "price": 11,
+      "description": "",
+      "photo_prompt_hint": "waffle topped with a scoop of vanilla ice cream and chocolate sauce"
+    },
+    {
+      "id": "waffle-strawberry-choco-dream",
+      "name": "Waffle Strawberry Choco-Dream",
+      "category": "waffles",
+      "price": 11.5,
+      "description": "",
+      "photo_prompt_hint": "waffle with fresh strawberries and chocolate cream, decadent plating"
+    },
+    {
+      "id": "waffle-choco-cream-strawberry",
+      "name": "Waffle Choco-Cream + Strawberry",
+      "category": "waffles",
+      "price": 11,
+      "description": "",
+      "photo_prompt_hint": "waffle with chocolate cream and fresh strawberries on top"
+    },
+    {
+      "id": "lemonade-lemon",
+      "name": "Lemonade Lemon",
+      "category": "cold-drinks",
+      "price": 5.5,
+      "description": "",
+      "photo_prompt_hint": "homemade lemon lemonade, pale yellow, lemon slice, ice, tall glass"
+    },
+    {
+      "id": "lemonade-peach",
+      "name": "Lemonade Peach",
+      "category": "cold-drinks",
+      "price": 5.5,
+      "description": "",
+      "photo_prompt_hint": "peach lemonade, soft orange-pink, ice cubes, tall glass"
+    },
+    {
+      "id": "lemonade-water-melon",
+      "name": "Lemonade Water Melon",
+      "category": "cold-drinks",
+      "price": 5.5,
+      "description": "",
+      "photo_prompt_hint": "watermelon lemonade, bright pink, ice, mint, tall glass"
+    },
+    {
+      "id": "fresh-orange-juice",
+      "name": "Fresh Orange Juice",
+      "category": "cold-drinks",
+      "price": 6,
+      "description": "",
+      "photo_prompt_hint": "freshly squeezed orange juice, vibrant orange, pulp, glass with orange slice"
+    },
+    {
+      "id": "apple-juice",
+      "name": "Apple Juice",
+      "category": "cold-drinks",
+      "price": 5.5,
+      "description": "",
+      "photo_prompt_hint": "clear apple juice, golden, in a glass, fresh and simple"
+    },
+    {
+      "id": "sunshine",
+      "name": "Sunshine",
+      "category": "fresh-smoothies",
+      "price": 8.5,
+      "description": "pineapple + mango + strawberry",
+      "photo_prompt_hint": "tropical smoothie of pineapple mango and strawberry, bright orange-yellow, tall glass"
+    },
+    {
+      "id": "paradise",
+      "name": "Paradise",
+      "category": "fresh-smoothies",
+      "price": 8.5,
+      "description": "mango + banana",
+      "photo_prompt_hint": "mango banana smoothie, creamy golden yellow, tall glass"
+    },
+    {
+      "id": "tropical",
+      "name": "Tropical",
+      "category": "fresh-smoothies",
+      "price": 8.5,
+      "description": "strawberry + banana",
+      "photo_prompt_hint": "strawberry banana smoothie, soft pink, tall glass"
+    },
+    {
+      "id": "acai",
+      "name": "Açaí",
+      "category": "fresh-smoothies",
+      "price": 8.5,
+      "description": "açaí + banana",
+      "photo_prompt_hint": "acai banana smoothie bowl or glass, deep purple, topped with fruit"
+    },
+    {
+      "id": "fresh-fruit",
+      "name": "Fresh fruit",
+      "category": "toppings-sauces",
+      "price": 2.5,
+      "description": "",
+      "photo_prompt_hint": "small bowl of fresh mixed fruit, strawberries and banana slices"
+    },
+    {
+      "id": "pistachio-sauce",
+      "name": "Pistachio sauce",
+      "category": "toppings-sauces",
+      "price": 2.5,
+      "description": "",
+      "photo_prompt_hint": "small dish of green pistachio sauce, glossy"
+    },
+    {
+      "id": "bueno-sauce",
+      "name": "Bueno sauce",
+      "category": "toppings-sauces",
+      "price": 2.5,
+      "description": "",
+      "photo_prompt_hint": "small dish of hazelnut Bueno chocolate sauce, glossy brown"
+    },
+    {
+      "id": "whipped-cream",
+      "name": "Whipped cream",
+      "category": "toppings-sauces",
+      "price": 2.5,
+      "description": "",
+      "photo_prompt_hint": "swirl of freshly whipped cream in a small dish"
+    },
+    {
+      "id": "scoop-ice-cream",
+      "name": "Scoop Ice cream",
+      "category": "toppings-sauces",
+      "price": 2.5,
+      "description": "",
+      "photo_prompt_hint": "single scoop of vanilla ice cream in a small dish"
+    },
+    {
+      "id": "lotus-sauce",
+      "name": "Lotus sauce",
+      "category": "toppings-sauces",
+      "price": 2.5,
+      "description": "",
+      "photo_prompt_hint": "small dish of caramel Lotus Biscoff sauce with a biscuit"
+    },
+    {
+      "id": "crumble-oreo-etc",
+      "name": "Crumble Oreo etc.",
+      "category": "toppings-sauces",
+      "price": 2.5,
+      "description": "",
+      "photo_prompt_hint": "small dish of crushed Oreo cookie crumble"
+    },
+    {
+      "id": "white-chocolate-sauce",
+      "name": "White chocolate sauce",
+      "category": "toppings-sauces",
+      "price": 2.5,
+      "description": "",
+      "photo_prompt_hint": "small dish of glossy white chocolate sauce"
+    },
+    {
+      "id": "nutella",
+      "name": "Nutella",
+      "category": "toppings-sauces",
+      "price": 2.5,
+      "description": "",
+      "photo_prompt_hint": "small dish of Nutella hazelnut chocolate spread"
+    },
+    {
+      "id": "caramel",
+      "name": "Caramel",
+      "category": "toppings-sauces",
+      "price": 2.5,
+      "description": "",
+      "photo_prompt_hint": "small dish of golden caramel sauce, glossy drizzle"
+    },
+    {
+      "id": "maybe-syrup",
+      "name": "Maybe syrup",
+      "category": "toppings-sauces",
+      "price": 2,
+      "description": "",
+      "photo_prompt_hint": "small jug of maple syrup, golden"
+    },
+    {
+      "id": "dark-chocolate",
+      "name": "Dark chocolate",
+      "category": "toppings-sauces",
+      "price": 3,
+      "description": "",
+      "photo_prompt_hint": "small dish of glossy dark chocolate sauce"
+    },
+    {
+      "id": "toast-peanut-butter-and-banana",
+      "name": "Toast Peanut Butter and Banana",
+      "category": "breakfast-lunch",
+      "price": 5.5,
+      "description": "",
+      "photo_prompt_hint": "toast topped with peanut butter and banana slices, plated"
+    },
+    {
+      "id": "toast-cheese-and-ham",
+      "name": "Toast Cheese and Ham",
+      "category": "breakfast-lunch",
+      "price": 7,
+      "description": "",
+      "photo_prompt_hint": "toasted sandwich with melted cheese and ham, plated"
+    },
+    {
+      "id": "toast-cheese-and-tomato",
+      "name": "Toast Cheese and Tomato",
+      "category": "breakfast-lunch",
+      "price": 7,
+      "description": "",
+      "photo_prompt_hint": "toasted sandwich with melted cheese and tomato, plated"
+    },
+    {
+      "id": "toast-tuna-cream-and-fresh-fruit",
+      "name": "Toast Tuna Cream and Fresh Fruit",
+      "category": "breakfast-lunch",
+      "price": 5.5,
+      "description": "",
+      "photo_prompt_hint": "toast with creamy tuna, served with fresh fruit on the side"
+    },
+    {
+      "id": "yoghurt-granola-and-fresh-fruit",
+      "name": "Yoghurt, Granola and Fresh Fruit",
+      "category": "breakfast-lunch",
+      "price": 9.5,
+      "description": "",
+      "photo_prompt_hint": "bowl of yoghurt with granola and fresh fruit, breakfast bowl"
+    },
+    {
+      "id": "flat-croissants",
+      "name": "Flat Croissants",
+      "category": "pastries",
+      "price": 5.5,
+      "description": "",
+      "photo_prompt_hint": "flat pressed croissant, crisp and golden, on a plate"
+    },
+    {
+      "id": "gluten-free-brownies",
+      "name": "Gluten-Free Brownies",
+      "category": "pastries",
+      "price": 6,
+      "description": "",
+      "photo_prompt_hint": "rich fudgy chocolate brownie squares on a plate",
+      "tags": [
+        "gluten-free"
+      ]
+    },
+    {
+      "id": "ny-cheesecake",
+      "name": "NY Cheesecake",
+      "category": "pastries",
+      "price": 6.5,
+      "description": "",
+      "photo_prompt_hint": "slice of New York cheesecake, creamy, on a plate"
+    },
+    {
+      "id": "dutch-apple-pie-whipped-cream",
+      "name": "Dutch Apple Pie + Whipped Cream",
+      "category": "pastries",
+      "price": 6.5,
+      "description": "",
+      "photo_prompt_hint": "slice of Dutch apple pie with a dollop of whipped cream, cinnamon"
+    }
+  ]
+}

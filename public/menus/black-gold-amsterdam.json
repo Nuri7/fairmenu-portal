@@ -1,0 +1,31 @@
+{
+  "vendor": {
+    "name": "Black Gold Amsterdam",
+    "slug": "black-gold-amsterdam",
+    "currency": "EUR",
+    "locale": "nl-NL"
+  },
+  "location": {
+    "address": "Korte Koningsstraat 13 H, 1011 EX Amsterdam, Netherlands",
+    "area": "Nieuwmarkt/Lastage",
+    "city": "Amsterdam",
+    "lat": 52.3719,
+    "lng": 4.9042,
+    "phone": "+31 6 51086841",
+    "hours": {
+      "mon": "09:00-17:00",
+      "tue": "09:00-17:00",
+      "wed": "09:00-17:00",
+      "thu": "09:00-17:00",
+      "fri": "09:00-17:00",
+      "sat": "10:00-18:00",
+      "sun": "11:00-17:00"
+    }
+  },
+  "menu_status": "coming_soon",
+  "prices_verified": false,
+  "photo_provider": "flux-pro",
+  "photo_style": "bright airy Amsterdam specialty coffee bar, natural window light, minimalist third-wave aesthetic, professional photography, 4K",
+  "categories": [],
+  "items": []
+}

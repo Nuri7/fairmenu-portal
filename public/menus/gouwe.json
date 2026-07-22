@@ -1,0 +1,475 @@
+{
+  "vendor": {
+    "name": "Café de Gouwe",
+    "slug": "cafe-de-gouwe",
+    "currency": "EUR",
+    "locale": "nl-NL"
+  },
+  "photo_provider": "flux-pro",
+  "photo_style": "warm cozy Dutch café atmosphere, wooden table, daylight, food photography, 4K",
+  "categories": [
+    {
+      "id": "voorgerecht",
+      "name": "Voorgerecht"
+    },
+    {
+      "id": "grote-trek",
+      "name": "Grote trek"
+    },
+    {
+      "id": "extreem",
+      "name": "Extreem"
+    },
+    {
+      "id": "nagerecht",
+      "name": "Nagerecht"
+    },
+    {
+      "id": "borrel",
+      "name": "Borrel"
+    },
+    {
+      "id": "beer",
+      "name": "beer"
+    },
+    {
+      "id": "wine",
+      "name": "wine"
+    }
+  ],
+  "items": [
+    {
+      "id": "carpaccio",
+      "name": "Gouwe Carpaccio",
+      "category": "voorgerecht",
+      "price": 11,
+      "description": "",
+      "photo_prompt_hint": "Gouwe Carpaccio",
+      "tags": [
+        "fancy"
+      ]
+    },
+    {
+      "id": "soep",
+      "name": "Soep van het Moment",
+      "category": "voorgerecht",
+      "price": 6.5,
+      "description": "",
+      "photo_prompt_hint": "Soep van het Moment",
+      "tags": [
+        "gezellig"
+      ]
+    },
+    {
+      "id": "broodplankje",
+      "name": "Broodplankje",
+      "category": "voorgerecht",
+      "price": 6.5,
+      "description": "",
+      "photo_prompt_hint": "Broodplankje",
+      "tags": [
+        "delen"
+      ]
+    },
+    {
+      "id": "hamburger",
+      "name": "Gouwe Hamburger",
+      "category": "grote-trek",
+      "price": 17.5,
+      "description": "",
+      "photo_prompt_hint": "Gouwe Hamburger",
+      "tags": [
+        "gezellig"
+      ]
+    },
+    {
+      "id": "vegaburger",
+      "name": "Vegetarische Burger",
+      "category": "grote-trek",
+      "price": 17.5,
+      "description": "",
+      "photo_prompt_hint": "Vegetarische Burger",
+      "tags": [
+        "bewust"
+      ]
+    },
+    {
+      "id": "cordonbleu",
+      "name": "Cordon Bleu (kip)",
+      "category": "grote-trek",
+      "price": 17.5,
+      "description": "",
+      "photo_prompt_hint": "Cordon Bleu (kip)",
+      "tags": [
+        "gezellig"
+      ]
+    },
+    {
+      "id": "halvekip",
+      "name": "Halve Kip",
+      "category": "grote-trek",
+      "price": 14.5,
+      "description": "",
+      "photo_prompt_hint": "Halve Kip",
+      "tags": [
+        "gezellig"
+      ]
+    },
+    {
+      "id": "sate",
+      "name": "Saté van Kip",
+      "category": "grote-trek",
+      "price": 16.5,
+      "description": "",
+      "photo_prompt_hint": "Saté van Kip",
+      "tags": [
+        "gezellig"
+      ]
+    },
+    {
+      "id": "biefstuk",
+      "name": "Ierse Biefstuk",
+      "category": "grote-trek",
+      "price": 20,
+      "description": "",
+      "photo_prompt_hint": "Ierse Biefstuk",
+      "tags": [
+        "fancy"
+      ]
+    },
+    {
+      "id": "schnitzel",
+      "name": "XXL Schnitzel",
+      "category": "extreem",
+      "price": 19.5,
+      "description": "",
+      "photo_prompt_hint": "XXL Schnitzel",
+      "tags": [
+        "gezellig"
+      ]
+    },
+    {
+      "id": "spareribs",
+      "name": "Spareribs",
+      "category": "extreem",
+      "price": 19.5,
+      "description": "",
+      "photo_prompt_hint": "Spareribs",
+      "tags": [
+        "gezellig"
+      ]
+    },
+    {
+      "id": "kindermenu",
+      "name": "Kindermenu",
+      "category": "voorgerecht",
+      "price": 7.5,
+      "description": "",
+      "photo_prompt_hint": "Kindermenu",
+      "tags": [
+        "gezellig"
+      ]
+    },
+    {
+      "id": "dameblanche",
+      "name": "Dame Blanche",
+      "category": "nagerecht",
+      "price": 7.5,
+      "description": "",
+      "photo_prompt_hint": "Dame Blanche",
+      "tags": [
+        "fancy"
+      ]
+    },
+    {
+      "id": "lavacake",
+      "name": "Chocolade Lavacake",
+      "category": "nagerecht",
+      "price": 7.5,
+      "description": "",
+      "photo_prompt_hint": "Chocolade Lavacake",
+      "tags": [
+        "fancy"
+      ]
+    },
+    {
+      "id": "kaasplank",
+      "name": "Kaasplankje",
+      "category": "borrel",
+      "price": 11.5,
+      "description": "",
+      "photo_prompt_hint": "Kaasplankje",
+      "tags": [
+        "delen"
+      ]
+    },
+    {
+      "id": "worstplankje",
+      "name": "Worstplankje",
+      "category": "borrel",
+      "price": 11.5,
+      "description": "",
+      "photo_prompt_hint": "Worstplankje",
+      "tags": [
+        "delen"
+      ]
+    },
+    {
+      "id": "kaasworst",
+      "name": "Kaas- en Worstplankje",
+      "category": "borrel",
+      "price": 15,
+      "description": "",
+      "photo_prompt_hint": "Kaas- en Worstplankje",
+      "tags": [
+        "delen"
+      ]
+    },
+    {
+      "id": "nootjes",
+      "name": "Nootjes",
+      "category": "borrel",
+      "price": 3.5,
+      "description": "",
+      "photo_prompt_hint": "Nootjes",
+      "tags": [
+        "gezellig"
+      ]
+    },
+    {
+      "id": "bittergarnituur",
+      "name": "Gemengd Bittergarnituur",
+      "category": "borrel",
+      "price": 8,
+      "description": "vanaf €8,00",
+      "photo_prompt_hint": "Gemengd Bittergarnituur",
+      "tags": [
+        "delen"
+      ]
+    },
+    {
+      "id": "duvel",
+      "name": "Duvel",
+      "category": "beer",
+      "price": 5,
+      "description": "",
+      "photo_prompt_hint": "Duvel"
+    },
+    {
+      "id": "tripel",
+      "name": "Westmalle Tripel",
+      "category": "beer",
+      "price": 5.5,
+      "description": "",
+      "photo_prompt_hint": "Westmalle Tripel"
+    },
+    {
+      "id": "affligemdubbel",
+      "name": "Affligem Dubbel",
+      "category": "beer",
+      "price": 5,
+      "description": "",
+      "photo_prompt_hint": "Affligem Dubbel"
+    },
+    {
+      "id": "lagoudale",
+      "name": "La Goudale",
+      "category": "beer",
+      "price": 5.5,
+      "description": "",
+      "photo_prompt_hint": "La Goudale"
+    },
+    {
+      "id": "affligemblond",
+      "name": "Affligem Blond",
+      "category": "beer",
+      "price": 4.5,
+      "description": "",
+      "photo_prompt_hint": "Affligem Blond"
+    },
+    {
+      "id": "brugsezot",
+      "name": "Brugse Zot Blond",
+      "category": "beer",
+      "price": 5,
+      "description": "",
+      "photo_prompt_hint": "Brugse Zot Blond"
+    },
+    {
+      "id": "oedipus",
+      "name": "Oedipus",
+      "category": "beer",
+      "price": 5,
+      "description": "",
+      "photo_prompt_hint": "Oedipus"
+    },
+    {
+      "id": "heineken",
+      "name": "Heineken Pilsner",
+      "category": "beer",
+      "price": 3.2,
+      "description": "",
+      "photo_prompt_hint": "Heineken Pilsner"
+    },
+    {
+      "id": "weizen",
+      "name": "Brand Weizen",
+      "category": "beer",
+      "price": 4.5,
+      "description": "",
+      "photo_prompt_hint": "Brand Weizen"
+    },
+    {
+      "id": "wit",
+      "name": "Affligem Belgisch Wit",
+      "category": "beer",
+      "price": 4.5,
+      "description": "",
+      "photo_prompt_hint": "Affligem Belgisch Wit"
+    },
+    {
+      "id": "texels",
+      "name": "Texels Skumkoppe",
+      "category": "beer",
+      "price": 5,
+      "description": "",
+      "photo_prompt_hint": "Texels Skumkoppe"
+    },
+    {
+      "id": "corona",
+      "name": "Corona",
+      "category": "beer",
+      "price": 4,
+      "description": "",
+      "photo_prompt_hint": "Corona"
+    },
+    {
+      "id": "radler",
+      "name": "Amstel Radler",
+      "category": "beer",
+      "price": 3.5,
+      "description": "",
+      "photo_prompt_hint": "Amstel Radler"
+    },
+    {
+      "id": "heineken00",
+      "name": "Heineken 0.0",
+      "category": "beer",
+      "price": 3.2,
+      "description": "",
+      "photo_prompt_hint": "Heineken 0.0"
+    },
+    {
+      "id": "radler00",
+      "name": "Amstel Radler 0.0%",
+      "category": "beer",
+      "price": 3.5,
+      "description": "",
+      "photo_prompt_hint": "Amstel Radler 0.0%"
+    },
+    {
+      "id": "affligem00",
+      "name": "Affligem Blond 0.0%",
+      "category": "beer",
+      "price": 3.5,
+      "description": "",
+      "photo_prompt_hint": "Affligem Blond 0.0%"
+    },
+    {
+      "id": "texels00",
+      "name": "Texels Skumkoppe 0.0%",
+      "category": "beer",
+      "price": 4,
+      "description": "",
+      "photo_prompt_hint": "Texels Skumkoppe 0.0%"
+    },
+    {
+      "id": "desperados",
+      "name": "Desperados Virgin",
+      "category": "beer",
+      "price": 3.5,
+      "description": "",
+      "photo_prompt_hint": "Desperados Virgin"
+    },
+    {
+      "id": "sauvignon",
+      "name": "Osadia Sauvignon Blanc",
+      "category": "wine",
+      "price": 5,
+      "description": "",
+      "photo_prompt_hint": "Osadia Sauvignon Blanc"
+    },
+    {
+      "id": "verdejo",
+      "name": "La Lustrosa Verdejo",
+      "category": "wine",
+      "price": 5,
+      "description": "",
+      "photo_prompt_hint": "La Lustrosa Verdejo"
+    },
+    {
+      "id": "pinotgrigio",
+      "name": "Ca' Del Doge Pinot Grigio",
+      "category": "wine",
+      "price": 5,
+      "description": "",
+      "photo_prompt_hint": "Ca' Del Doge Pinot Grigio"
+    },
+    {
+      "id": "chardonnay",
+      "name": "Luis Felipe Chardonnay",
+      "category": "wine",
+      "price": 5,
+      "description": "",
+      "photo_prompt_hint": "Luis Felipe Chardonnay"
+    },
+    {
+      "id": "zoet",
+      "name": "Kloster Krone Zoet",
+      "category": "wine",
+      "price": 5,
+      "description": "",
+      "photo_prompt_hint": "Kloster Krone Zoet"
+    },
+    {
+      "id": "rose",
+      "name": "Abadia Real Rosé",
+      "category": "wine",
+      "price": 5,
+      "description": "",
+      "photo_prompt_hint": "Abadia Real Rosé"
+    },
+    {
+      "id": "merlot",
+      "name": "Luis Felipe Merlot",
+      "category": "wine",
+      "price": 5,
+      "description": "",
+      "photo_prompt_hint": "Luis Felipe Merlot"
+    },
+    {
+      "id": "cabernet",
+      "name": "Xanadu Cabernet Sauvignon",
+      "category": "wine",
+      "price": 6.5,
+      "description": "",
+      "photo_prompt_hint": "Xanadu Cabernet Sauvignon"
+    },
+    {
+      "id": "malbec",
+      "name": "Navarro Correas Malbec",
+      "category": "wine",
+      "price": 7.5,
+      "description": "",
+      "photo_prompt_hint": "Navarro Correas Malbec"
+    },
+    {
+      "id": "prosecco",
+      "name": "Lisetto Prosecco",
+      "category": "wine",
+      "price": 7.5,
+      "description": "",
+      "photo_prompt_hint": "Lisetto Prosecco"
+    }
+  ]
+}

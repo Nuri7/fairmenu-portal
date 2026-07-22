@@ -1,0 +1,31 @@
+{
+  "vendor": {
+    "name": "De Wasserette",
+    "slug": "de-wasserette",
+    "currency": "EUR",
+    "locale": "nl-NL"
+  },
+  "location": {
+    "address": "Eerste van der Helststraat 27",
+    "area": "De Pijp (Oude Pijp)",
+    "city": "Amsterdam",
+    "lat": 52.3545,
+    "lng": 4.8925,
+    "phone": "+31 20 765 1411",
+    "hours": {
+      "mon": "07:30-17:00",
+      "tue": "07:30-17:00",
+      "wed": "07:30-17:00",
+      "thu": "07:30-17:00",
+      "fri": "07:30-17:00",
+      "sat": "07:30-17:00",
+      "sun": "07:30-17:00"
+    }
+  },
+  "menu_status": "coming_soon",
+  "prices_verified": false,
+  "photo_provider": "flux-pro",
+  "photo_style": "bright airy Amsterdam specialty coffee bar, natural window light, minimalist third-wave aesthetic, professional photography, 4K",
+  "categories": [],
+  "items": []
+}

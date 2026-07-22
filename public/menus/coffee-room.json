@@ -1,0 +1,31 @@
+{
+  "vendor": {
+    "name": "Coffee Room",
+    "slug": "coffee-room",
+    "currency": "EUR",
+    "locale": "nl-NL"
+  },
+  "location": {
+    "address": "Kinkerstraat 110, 1053 EC Amsterdam",
+    "area": "Oud-West (Da Costabuurt)",
+    "city": "Amsterdam",
+    "lat": 52.3665,
+    "lng": 4.873,
+    "phone": "020 612 4527",
+    "hours": {
+      "mon": "08:00-19:00",
+      "tue": "08:00-19:00",
+      "wed": "08:00-19:00",
+      "thu": "08:00-19:00",
+      "fri": "08:00-19:00",
+      "sat": "08:00-19:00",
+      "sun": "09:00-19:00"
+    }
+  },
+  "menu_status": "coming_soon",
+  "prices_verified": false,
+  "photo_provider": "flux-pro",
+  "photo_style": "bright airy Amsterdam specialty coffee bar, natural window light, minimalist third-wave aesthetic, professional photography, 4K",
+  "categories": [],
+  "items": []
+}

@@ -1,0 +1,1418 @@
+{
+  "vendor": {
+    "name": "Brasserie Park",
+    "slug": "brasseriepark",
+    "currency": "EUR",
+    "locale": "nl-NL"
+  },
+  "photo_provider": "flux-pro",
+  "photo_style": "moody overhead shot, dark wooden table, warm tungsten lighting, shallow depth of field, food photography, 4K",
+  "categories": [
+    {
+      "id": "ontbijt",
+      "name": "Ontbijt"
+    },
+    {
+      "id": "taarten",
+      "name": "Taarten"
+    },
+    {
+      "id": "lunch-park-specials",
+      "name": "Lunch - Park Specials"
+    },
+    {
+      "id": "sandwiches",
+      "name": "Sandwiches"
+    },
+    {
+      "id": "soepen",
+      "name": "Soepen"
+    },
+    {
+      "id": "maaltijd-salades",
+      "name": "Maaltijd Salades"
+    },
+    {
+      "id": "desserts",
+      "name": "Desserts"
+    },
+    {
+      "id": "borrel-planken",
+      "name": "Borrel - Planken"
+    },
+    {
+      "id": "happen",
+      "name": "Happen"
+    },
+    {
+      "id": "comfort-voorgerecht",
+      "name": "Comfort Voorgerecht"
+    },
+    {
+      "id": "comfort-hoofdgerecht",
+      "name": "Comfort Hoofdgerecht"
+    },
+    {
+      "id": "geniet-voorgerecht",
+      "name": "Geniet Voorgerecht"
+    },
+    {
+      "id": "geniet-hoofdgerecht",
+      "name": "Geniet Hoofdgerecht"
+    },
+    {
+      "id": "pak-uit-voorgerecht",
+      "name": "Pak Uit Voorgerecht"
+    },
+    {
+      "id": "pak-uit-hoofdgerecht",
+      "name": "Pak Uit Hoofdgerecht"
+    },
+    {
+      "id": "tussengerecht",
+      "name": "Tussengerecht"
+    },
+    {
+      "id": "bijgerechten",
+      "name": "Bijgerechten"
+    },
+    {
+      "id": "koffie-thee",
+      "name": "Koffie & Thee"
+    },
+    {
+      "id": "warme-specialiteiten",
+      "name": "Warme Specialiteiten"
+    },
+    {
+      "id": "koude-dranken",
+      "name": "Koude Dranken"
+    },
+    {
+      "id": "smoothies",
+      "name": "Smoothies"
+    },
+    {
+      "id": "sappen",
+      "name": "Sappen"
+    },
+    {
+      "id": "bier-tap",
+      "name": "Bier Tap"
+    },
+    {
+      "id": "bier-fles",
+      "name": "Bier Fles"
+    },
+    {
+      "id": "alcoholvrij-bier",
+      "name": "Alcoholvrij Bier"
+    },
+    {
+      "id": "gin-tonic",
+      "name": "Gin & Tonic"
+    },
+    {
+      "id": "cocktails",
+      "name": "Cocktails"
+    },
+    {
+      "id": "mocktails",
+      "name": "Mocktails"
+    },
+    {
+      "id": "witte-wijn",
+      "name": "Witte Wijn"
+    },
+    {
+      "id": "rose",
+      "name": "RosÉ"
+    },
+    {
+      "id": "rode-wijn",
+      "name": "Rode Wijn"
+    },
+    {
+      "id": "bubbels",
+      "name": "Bubbels"
+    },
+    {
+      "id": "dessertwijn",
+      "name": "Dessertwijn"
+    }
+  ],
+  "items": [
+    {
+      "id": "yoghurt",
+      "name": "Yoghurt",
+      "category": "ontbijt",
+      "price": 7,
+      "description": "granola, blauwe bessen",
+      "photo_prompt_hint": "granola, blauwe bessen"
+    },
+    {
+      "id": "croissant",
+      "name": "Croissant",
+      "category": "ontbijt",
+      "price": 4,
+      "description": "jam en boter",
+      "photo_prompt_hint": "jam en boter"
+    },
+    {
+      "id": "appel-noten-taart",
+      "name": "Appel-noten taart",
+      "category": "taarten",
+      "price": 5,
+      "description": "",
+      "photo_prompt_hint": "Appel-noten taart",
+      "tags": [
+        "vegan"
+      ]
+    },
+    {
+      "id": "blondie",
+      "name": "Blondie",
+      "category": "taarten",
+      "price": 4,
+      "description": "",
+      "photo_prompt_hint": "Blondie",
+      "tags": [
+        "gluten-free"
+      ]
+    },
+    {
+      "id": "chocolate-salted-caramel",
+      "name": "Chocolate salted caramel",
+      "category": "taarten",
+      "price": 4,
+      "description": "",
+      "photo_prompt_hint": "Chocolate salted caramel",
+      "tags": [
+        "gluten-free"
+      ]
+    },
+    {
+      "id": "carrot-cake",
+      "name": "Carrot cake",
+      "category": "taarten",
+      "price": 4,
+      "description": "",
+      "photo_prompt_hint": "Carrot cake"
+    },
+    {
+      "id": "cheesecake-van-het-seizoen",
+      "name": "Cheesecake van het seizoen",
+      "category": "taarten",
+      "price": 5,
+      "description": "",
+      "photo_prompt_hint": "Cheesecake van het seizoen"
+    },
+    {
+      "id": "bonbon-per-stuk",
+      "name": "Bonbon per stuk",
+      "category": "taarten",
+      "price": 1,
+      "description": "wit, melk of puur",
+      "photo_prompt_hint": "wit, melk of puur"
+    },
+    {
+      "id": "12-uurtje-vis-deluxe",
+      "name": "12-uurtje vis deluxe",
+      "category": "lunch-park-specials",
+      "price": 16.75,
+      "description": "gerookte zalm, rivierkreeftjes, garnalenkroketjes, krabsalade",
+      "photo_prompt_hint": "gerookte zalm, rivierkreeftjes, garnalenkroketjes, krabsalade"
+    },
+    {
+      "id": "huisgemaakte-pulled-chicken",
+      "name": "Huisgemaakte pulled chicken",
+      "category": "lunch-park-specials",
+      "price": 14,
+      "description": "briochebol, krokante ui, sriracha-limoenmayonaise",
+      "photo_prompt_hint": "briochebol, krokante ui, sriracha-limoenmayonaise"
+    },
+    {
+      "id": "vitello-tonnato",
+      "name": "Vitello tonnato",
+      "category": "lunch-park-specials",
+      "price": 14.5,
+      "description": "langzaam gegaarde kalfsmuis, tonijnmayonaise, krokante kappertjes",
+      "photo_prompt_hint": "langzaam gegaarde kalfsmuis, tonijnmayonaise, krokante kappertjes"
+    },
+    {
+      "id": "brasserie-burger-van-de-bge",
+      "name": "Brasserie Burger van de BGE",
+      "category": "lunch-park-specials",
+      "price": 20,
+      "description": "100% rundvleesburger van de Big Green Egg, cheddar, sla, gekarameliseerde uitjes, spek, augurk, barbecuesaus, verse boerenfriet",
+      "photo_prompt_hint": "100% rundvleesburger van de Big Green Egg, cheddar, sla, gekarameliseerde uitjes, spek, augurk, barbecuesaus, verse boerenfriet"
+    },
+    {
+      "id": "carpaccio",
+      "name": "Carpaccio",
+      "category": "sandwiches",
+      "price": 13.5,
+      "description": "oude kaas, pompoenpitten, rucola, truffelmayonaise",
+      "photo_prompt_hint": "oude kaas, pompoenpitten, rucola, truffelmayonaise"
+    },
+    {
+      "id": "huisgemaakte-tonijnsalade",
+      "name": "Huisgemaakte tonijnsalade",
+      "category": "sandwiches",
+      "price": 12,
+      "description": "olijven, gemarineerde tomaat, rode ui",
+      "photo_prompt_hint": "olijven, gemarineerde tomaat, rode ui"
+    },
+    {
+      "id": "caesar-sandwich",
+      "name": "Caesar sandwich",
+      "category": "sandwiches",
+      "price": 13,
+      "description": "crispy chicken, bacon, little gem, Parmezaanse kaas, caesardressing",
+      "photo_prompt_hint": "crispy chicken, bacon, little gem, Parmezaanse kaas, caesardressing"
+    },
+    {
+      "id": "ambachtelijke-draadjesvleeskroketten",
+      "name": "Ambachtelijke draadjesvleeskroketten",
+      "category": "sandwiches",
+      "price": 12.5,
+      "description": "rundvlees, mosterdmayonaise",
+      "photo_prompt_hint": "rundvlees, mosterdmayonaise"
+    },
+    {
+      "id": "burrata",
+      "name": "Burrata",
+      "category": "sandwiches",
+      "price": 14,
+      "description": "geroosterde aubergine, harissa-hummus, gepofte boekweit",
+      "photo_prompt_hint": "geroosterde aubergine, harissa-hummus, gepofte boekweit"
+    },
+    {
+      "id": "12-uurtje-vis",
+      "name": "12-uurtje vis",
+      "category": "sandwiches",
+      "price": 14,
+      "description": "gerookte zalm, garnalenkroketjes, krabsalade",
+      "photo_prompt_hint": "gerookte zalm, garnalenkroketjes, krabsalade"
+    },
+    {
+      "id": "uitsmijter",
+      "name": "Uitsmijter",
+      "category": "sandwiches",
+      "price": 10,
+      "description": "suppl. kaas +1.25, ham +1.25, spek +1.5, gerookte zalm +3.5",
+      "photo_prompt_hint": "suppl. kaas +1.25, ham +1.25, spek +1.5, gerookte zalm +3.5"
+    },
+    {
+      "id": "pastinaaksoep",
+      "name": "Pastinaaksoep",
+      "category": "soepen",
+      "price": 8.5,
+      "description": "truffelroom, amandelschaafsel",
+      "photo_prompt_hint": "truffelroom, amandelschaafsel"
+    },
+    {
+      "id": "wisselende-soep",
+      "name": "Wisselende soep",
+      "category": "soepen",
+      "price": 8.5,
+      "description": "vraag ernaar bij onze medewerkers",
+      "photo_prompt_hint": "vraag ernaar bij onze medewerkers"
+    },
+    {
+      "id": "pokebowl-tonijn",
+      "name": "Pokébowl tonijn",
+      "category": "maaltijd-salades",
+      "price": 21,
+      "description": "avocado, sojabonen, mango, gember, komkommer, zeewier, radijs",
+      "photo_prompt_hint": "avocado, sojabonen, mango, gember, komkommer, zeewier, radijs"
+    },
+    {
+      "id": "pokebowl-kip",
+      "name": "Pokébowl kip",
+      "category": "maaltijd-salades",
+      "price": 19.5,
+      "description": "avocado, sojabonen, mango, gember, komkommer, zeewier, radijs",
+      "photo_prompt_hint": "avocado, sojabonen, mango, gember, komkommer, zeewier, radijs"
+    },
+    {
+      "id": "geitenkaassalade",
+      "name": "Geitenkaassalade",
+      "category": "maaltijd-salades",
+      "price": 17.5,
+      "description": "spinazie, geitenkaas, gegrilde groenten, notendressing, chips van vergeten groenten",
+      "photo_prompt_hint": "spinazie, geitenkaas, gegrilde groenten, notendressing, chips van vergeten groenten"
+    },
+    {
+      "id": "salade-caprese",
+      "name": "Salade caprese",
+      "category": "maaltijd-salades",
+      "price": 17.5,
+      "description": "tomatentartaar, burrata, gepofte honingtomaatjes, pesto",
+      "photo_prompt_hint": "tomatentartaar, burrata, gepofte honingtomaatjes, pesto"
+    },
+    {
+      "id": "asian-beef",
+      "name": "Asian beef",
+      "category": "maaltijd-salades",
+      "price": 19.5,
+      "description": "biefstukreepjes, cashewnoten, sesam-sojadressing, taugé, komkommer",
+      "photo_prompt_hint": "biefstukreepjes, cashewnoten, sesam-sojadressing, taugé, komkommer"
+    },
+    {
+      "id": "parks-koffie",
+      "name": "Parks koffie",
+      "category": "desserts",
+      "price": 9.5,
+      "description": "amaretto, blondie, macaron, mini cheesecake",
+      "photo_prompt_hint": "amaretto, blondie, macaron, mini cheesecake"
+    },
+    {
+      "id": "eclair",
+      "name": "Éclair",
+      "category": "desserts",
+      "price": 9,
+      "description": "vanilleparfait, chocolademousse, chocoladesaus, amandelschaafsel",
+      "photo_prompt_hint": "vanilleparfait, chocolademousse, chocoladesaus, amandelschaafsel"
+    },
+    {
+      "id": "park-s-favourites",
+      "name": "Park's Favourites",
+      "category": "borrel-planken",
+      "price": 22.5,
+      "description": "bitterballen, krokante chicken bites, gyoza's, grillworst, boerenkaas, brood met dips, frietje met truffelmayonaise",
+      "photo_prompt_hint": "bitterballen, krokante chicken bites, gyoza's, grillworst, boerenkaas, brood met dips, frietje met truffelmayonaise"
+    },
+    {
+      "id": "bitterballen-7-stuks",
+      "name": "Bitterballen 7 stuks",
+      "category": "happen",
+      "price": 8,
+      "description": "",
+      "photo_prompt_hint": "Bitterballen 7 stuks"
+    },
+    {
+      "id": "bitterballen-10-stuks",
+      "name": "Bitterballen 10 stuks",
+      "category": "happen",
+      "price": 9.5,
+      "description": "",
+      "photo_prompt_hint": "Bitterballen 10 stuks"
+    },
+    {
+      "id": "kaastengels-8-stuks",
+      "name": "Kaastengels 8 stuks",
+      "category": "happen",
+      "price": 8,
+      "description": "",
+      "photo_prompt_hint": "Kaastengels 8 stuks"
+    },
+    {
+      "id": "desembrood",
+      "name": "Desembrood",
+      "category": "happen",
+      "price": 6.5,
+      "description": "kruidenboter, truffelmayonaise",
+      "photo_prompt_hint": "kruidenboter, truffelmayonaise"
+    },
+    {
+      "id": "cas-kas-bitterballen-7-stuks",
+      "name": "Cas & Kas bitterballen 7 stuks",
+      "category": "happen",
+      "price": 8.5,
+      "description": "",
+      "photo_prompt_hint": "Cas & Kas bitterballen 7 stuks",
+      "tags": [
+        "vegan"
+      ]
+    },
+    {
+      "id": "cas-kas-bitterballen-10-stuks",
+      "name": "Cas & Kas bitterballen 10 stuks",
+      "category": "happen",
+      "price": 10.5,
+      "description": "",
+      "photo_prompt_hint": "Cas & Kas bitterballen 10 stuks",
+      "tags": [
+        "vegan"
+      ]
+    },
+    {
+      "id": "boerenkaas",
+      "name": "Boerenkaas",
+      "category": "happen",
+      "price": 6.5,
+      "description": "grove mosterd, zuur",
+      "photo_prompt_hint": "grove mosterd, zuur"
+    },
+    {
+      "id": "camembert-uit-de-oven",
+      "name": "Camembert uit de oven",
+      "category": "happen",
+      "price": 12.5,
+      "description": "honing, pitten, brood",
+      "photo_prompt_hint": "honing, pitten, brood"
+    },
+    {
+      "id": "gyoza-s-8-stuks",
+      "name": "Gyoza's 8 stuks",
+      "category": "happen",
+      "price": 9,
+      "description": "",
+      "photo_prompt_hint": "Gyoza's 8 stuks",
+      "tags": [
+        "vegan"
+      ]
+    },
+    {
+      "id": "bittergarnituur-16-stuks",
+      "name": "Bittergarnituur 16 stuks",
+      "category": "happen",
+      "price": 14.5,
+      "description": "bitterballen, kaastengels, frikandelletjes, kipnuggets",
+      "photo_prompt_hint": "bitterballen, kaastengels, frikandelletjes, kipnuggets"
+    },
+    {
+      "id": "krokante-chicken-bites-6-stuks",
+      "name": "Krokante chicken bites 6 stuks",
+      "category": "happen",
+      "price": 8,
+      "description": "chilimayonaise",
+      "photo_prompt_hint": "chilimayonaise"
+    },
+    {
+      "id": "krokant-buikspek",
+      "name": "Krokant buikspek",
+      "category": "comfort-voorgerecht",
+      "price": 13,
+      "description": "koolsalade, dashi-hollandaise",
+      "photo_prompt_hint": "koolsalade, dashi-hollandaise"
+    },
+    {
+      "id": "waldorfsalade",
+      "name": "Waldorfsalade",
+      "category": "comfort-voorgerecht",
+      "price": 12.5,
+      "description": "witlof, appel, druiven, bleekselderij, walnoten, blauwe kaasdressing",
+      "photo_prompt_hint": "witlof, appel, druiven, bleekselderij, walnoten, blauwe kaasdressing"
+    },
+    {
+      "id": "tom-kha-kai-soep",
+      "name": "Tom kha kai soep",
+      "category": "comfort-voorgerecht",
+      "price": 10,
+      "description": "kippendij, kokos, bosui",
+      "photo_prompt_hint": "kippendij, kokos, bosui"
+    },
+    {
+      "id": "spitskool-in-miso-gegaard",
+      "name": "Spitskool in miso gegaard",
+      "category": "comfort-hoofdgerecht",
+      "price": 21.5,
+      "description": "beurre blanc, cashewnoten, shiitake, bosui, krokante chili-olie, verse boerenfriet",
+      "photo_prompt_hint": "beurre blanc, cashewnoten, shiitake, bosui, krokante chili-olie, verse boerenfriet",
+      "tags": [
+        "vegetarian"
+      ]
+    },
+    {
+      "id": "pokebowl-tonijn-of-kip",
+      "name": "Pokébowl tonijn of kip",
+      "category": "comfort-hoofdgerecht",
+      "price": 21,
+      "description": "avocado, sojabonen, mango, gember, komkommer, zeewier, radijs",
+      "photo_prompt_hint": "avocado, sojabonen, mango, gember, komkommer, zeewier, radijs"
+    },
+    {
+      "id": "brasserie-burger-van-de-bge-2",
+      "name": "Brasserie Burger van de BGE",
+      "category": "comfort-hoofdgerecht",
+      "price": 20,
+      "description": "100% rundvleesburger van de Big Green Egg, cheddar, sla, gekarameliseerde uitjes, spek, augurk, barbecuesaus, verse boerenfriet",
+      "photo_prompt_hint": "100% rundvleesburger van de Big Green Egg, cheddar, sla, gekarameliseerde uitjes, spek, augurk, barbecuesaus, verse boerenfriet"
+    },
+    {
+      "id": "vitello-tonnato-2",
+      "name": "Vitello tonnato",
+      "category": "geniet-voorgerecht",
+      "price": 14.5,
+      "description": "langzaam gegaarde kalfsmuis, tonijnmayonaise, krokante kappertjes",
+      "photo_prompt_hint": "langzaam gegaarde kalfsmuis, tonijnmayonaise, krokante kappertjes"
+    },
+    {
+      "id": "taartje-van-rivierkreeft-en-gerookte-zalm",
+      "name": "Taartje van rivierkreeft en gerookte zalm",
+      "category": "geniet-voorgerecht",
+      "price": 14.5,
+      "description": "kreeftenmayonaise, torpedogarnaal",
+      "photo_prompt_hint": "kreeftenmayonaise, torpedogarnaal"
+    },
+    {
+      "id": "burrata-2",
+      "name": "Burrata",
+      "category": "geniet-voorgerecht",
+      "price": 14,
+      "description": "tartaar van tomaat, gepofte tomaat, basilicum-olie",
+      "photo_prompt_hint": "tartaar van tomaat, gepofte tomaat, basilicum-olie"
+    },
+    {
+      "id": "polderhoender-supreme",
+      "name": "Polderhoender supreme",
+      "category": "geniet-hoofdgerecht",
+      "price": 24.5,
+      "description": "krokante parmaham, taartje van knolselderij, gerookte amandel, truffeljus, verse boerenfriet",
+      "photo_prompt_hint": "krokante parmaham, taartje van knolselderij, gerookte amandel, truffeljus, verse boerenfriet"
+    },
+    {
+      "id": "zalmfilet",
+      "name": "Zalmfilet",
+      "category": "geniet-hoofdgerecht",
+      "price": 24.5,
+      "description": "crumble van gedroogde tomaat, antiboise, gefrituurde basilicum, verse boerenfriet",
+      "photo_prompt_hint": "crumble van gedroogde tomaat, antiboise, gefrituurde basilicum, verse boerenfriet"
+    },
+    {
+      "id": "strudel-van-bospaddenstoelen",
+      "name": "Strudel van bospaddenstoelen",
+      "category": "geniet-hoofdgerecht",
+      "price": 22.5,
+      "description": "zwarte linzen, gekarameliseerde sjalot, hazelnoot, verse boerenfriet",
+      "photo_prompt_hint": "zwarte linzen, gekarameliseerde sjalot, hazelnoot, verse boerenfriet",
+      "tags": [
+        "vegetarian"
+      ]
+    },
+    {
+      "id": "groene-asperge-met-een-krokant-eitje",
+      "name": "Groene asperge met een krokant eitje",
+      "category": "pak-uit-voorgerecht",
+      "price": 16,
+      "description": "saus van spinazie en bieslook, Parmezaanse kaas",
+      "photo_prompt_hint": "saus van spinazie en bieslook, Parmezaanse kaas"
+    },
+    {
+      "id": "tartaar-van-tonijn",
+      "name": "Tartaar van tonijn",
+      "category": "pak-uit-voorgerecht",
+      "price": 14.5,
+      "description": "crème van avocado en wasabi, yuzudressing, krokant van rijstvel",
+      "photo_prompt_hint": "crème van avocado en wasabi, yuzudressing, krokant van rijstvel"
+    },
+    {
+      "id": "steak-tartaar",
+      "name": "Steak tartaar",
+      "category": "pak-uit-voorgerecht",
+      "price": 16,
+      "description": "op klassieke wijze",
+      "photo_prompt_hint": "op klassieke wijze"
+    },
+    {
+      "id": "iberico-varken",
+      "name": "Ibérico varken",
+      "category": "pak-uit-hoofdgerecht",
+      "price": 27,
+      "description": "medaillons van varkenshaas, Ibérico ribfingers, paksoi, bosui, jus van gerookte knoflook, verse boerenfriet",
+      "photo_prompt_hint": "medaillons van varkenshaas, Ibérico ribfingers, paksoi, bosui, jus van gerookte knoflook, verse boerenfriet"
+    },
+    {
+      "id": "black-angus-steak",
+      "name": "Black Angus steak",
+      "category": "pak-uit-hoofdgerecht",
+      "price": 25,
+      "description": "pepersaus, gegrilde kingboleet, verse boerenfriet",
+      "photo_prompt_hint": "pepersaus, gegrilde kingboleet, verse boerenfriet"
+    },
+    {
+      "id": "zeewolffilet",
+      "name": "Zeewolffilet",
+      "category": "pak-uit-hoofdgerecht",
+      "price": 27,
+      "description": "gamba, zeekraal, kreeftensaus, verse boerenfriet",
+      "photo_prompt_hint": "gamba, zeekraal, kreeftensaus, verse boerenfriet"
+    },
+    {
+      "id": "grand-dessert",
+      "name": "Grand dessert",
+      "category": "desserts",
+      "price": 14,
+      "description": "verrassing van de chef",
+      "photo_prompt_hint": "verrassing van de chef"
+    },
+    {
+      "id": "eclair-2",
+      "name": "Éclair",
+      "category": "desserts",
+      "price": 9,
+      "description": "vanilleparfait, chocolademousse, chocoladesaus, amandelschaafsel",
+      "photo_prompt_hint": "vanilleparfait, chocolademousse, chocoladesaus, amandelschaafsel"
+    },
+    {
+      "id": "aardbeien-romanoff",
+      "name": "Aardbeien Romanoff",
+      "category": "desserts",
+      "price": 9,
+      "description": "Hollandse aardbeien, meringue, vanilleroomijs",
+      "photo_prompt_hint": "Hollandse aardbeien, meringue, vanilleroomijs"
+    },
+    {
+      "id": "parks-koffie-2",
+      "name": "Parks koffie",
+      "category": "desserts",
+      "price": 9.5,
+      "description": "amaretto, blondie, macaron, mini cheesecake",
+      "photo_prompt_hint": "amaretto, blondie, macaron, mini cheesecake"
+    },
+    {
+      "id": "wisselende-soep-2",
+      "name": "Wisselende soep",
+      "category": "tussengerecht",
+      "price": 6,
+      "description": "vraag ernaar bij onze medewerkers",
+      "photo_prompt_hint": "vraag ernaar bij onze medewerkers"
+    },
+    {
+      "id": "seizoensgroenten",
+      "name": "Seizoensgroenten",
+      "category": "bijgerechten",
+      "price": 5,
+      "description": "",
+      "photo_prompt_hint": "Seizoensgroenten"
+    },
+    {
+      "id": "verse-boerenfriet",
+      "name": "Verse boerenfriet",
+      "category": "bijgerechten",
+      "price": 5,
+      "description": "",
+      "photo_prompt_hint": "Verse boerenfriet"
+    },
+    {
+      "id": "koffie",
+      "name": "Koffie",
+      "category": "koffie-thee",
+      "price": 3.55,
+      "description": "",
+      "photo_prompt_hint": "Koffie"
+    },
+    {
+      "id": "espresso",
+      "name": "Espresso",
+      "category": "koffie-thee",
+      "price": 3.55,
+      "description": "",
+      "photo_prompt_hint": "Espresso"
+    },
+    {
+      "id": "espresso-macchiato",
+      "name": "Espresso macchiato",
+      "category": "koffie-thee",
+      "price": 3.7,
+      "description": "",
+      "photo_prompt_hint": "Espresso macchiato"
+    },
+    {
+      "id": "dubbele-espresso",
+      "name": "Dubbele espresso",
+      "category": "koffie-thee",
+      "price": 4.6,
+      "description": "",
+      "photo_prompt_hint": "Dubbele espresso"
+    },
+    {
+      "id": "koffie-verkeerd",
+      "name": "Koffie verkeerd",
+      "category": "koffie-thee",
+      "price": 3.85,
+      "description": "",
+      "photo_prompt_hint": "Koffie verkeerd"
+    },
+    {
+      "id": "flat-white",
+      "name": "Flat white",
+      "category": "koffie-thee",
+      "price": 4.85,
+      "description": "",
+      "photo_prompt_hint": "Flat white"
+    },
+    {
+      "id": "cappuccino",
+      "name": "Cappuccino",
+      "category": "koffie-thee",
+      "price": 3.85,
+      "description": "",
+      "photo_prompt_hint": "Cappuccino"
+    },
+    {
+      "id": "latte-macchiato",
+      "name": "Latte macchiato",
+      "category": "koffie-thee",
+      "price": 4.25,
+      "description": "",
+      "photo_prompt_hint": "Latte macchiato"
+    },
+    {
+      "id": "fair-trade-thee-diverse-smaken",
+      "name": "Fair trade thee (diverse smaken)",
+      "category": "koffie-thee",
+      "price": 3.4,
+      "description": "",
+      "photo_prompt_hint": "Fair trade thee (diverse smaken)"
+    },
+    {
+      "id": "verse-thee-verse-munt-gember-sinaasappel-en-kaneel",
+      "name": "Verse thee (verse munt, gember, sinaasappel en kaneel)",
+      "category": "koffie-thee",
+      "price": 4.25,
+      "description": "",
+      "photo_prompt_hint": "Verse thee (verse munt, gember, sinaasappel en kaneel)"
+    },
+    {
+      "id": "chai-latte",
+      "name": "Chai latte",
+      "category": "warme-specialiteiten",
+      "price": 5,
+      "description": "",
+      "photo_prompt_hint": "Chai latte"
+    },
+    {
+      "id": "dirty-chai-latte",
+      "name": "Dirty chai latte",
+      "category": "warme-specialiteiten",
+      "price": 5.5,
+      "description": "",
+      "photo_prompt_hint": "Dirty chai latte"
+    },
+    {
+      "id": "warme-chocolademelk",
+      "name": "Warme chocolademelk",
+      "category": "warme-specialiteiten",
+      "price": 3.85,
+      "description": "",
+      "photo_prompt_hint": "Warme chocolademelk"
+    },
+    {
+      "id": "special-latte-macchiato-monin-siroop-karamel-chocolade-vanil",
+      "name": "Special latte macchiato (Monin siroop: karamel, chocolade, vanille of amaretto)",
+      "category": "warme-specialiteiten",
+      "price": 5,
+      "description": "",
+      "photo_prompt_hint": "Special latte macchiato (Monin siroop: karamel, chocolade, vanille of amaretto)"
+    },
+    {
+      "id": "special-coffees-irish-jamaican-spanish-french-italian-leidse",
+      "name": "Special coffees (Irish, Jamaican, Spanish, French, Italian, Leidse)",
+      "category": "warme-specialiteiten",
+      "price": 9.5,
+      "description": "",
+      "photo_prompt_hint": "Special coffees (Irish, Jamaican, Spanish, French, Italian, Leidse)"
+    },
+    {
+      "id": "pepsi",
+      "name": "Pepsi",
+      "category": "koude-dranken",
+      "price": 3.85,
+      "description": "",
+      "photo_prompt_hint": "Pepsi"
+    },
+    {
+      "id": "ice-tea",
+      "name": "Ice Tea",
+      "category": "koude-dranken",
+      "price": 3.85,
+      "description": "",
+      "photo_prompt_hint": "Ice Tea"
+    },
+    {
+      "id": "7up",
+      "name": "7Up",
+      "category": "koude-dranken",
+      "price": 3.85,
+      "description": "",
+      "photo_prompt_hint": "7Up"
+    },
+    {
+      "id": "cassis",
+      "name": "Cassis",
+      "category": "koude-dranken",
+      "price": 3.85,
+      "description": "",
+      "photo_prompt_hint": "Cassis"
+    },
+    {
+      "id": "ginger-ale",
+      "name": "Ginger ale",
+      "category": "koude-dranken",
+      "price": 3.85,
+      "description": "",
+      "photo_prompt_hint": "Ginger ale"
+    },
+    {
+      "id": "tonic",
+      "name": "Tonic",
+      "category": "koude-dranken",
+      "price": 3.85,
+      "description": "",
+      "photo_prompt_hint": "Tonic"
+    },
+    {
+      "id": "rivella",
+      "name": "Rivella",
+      "category": "koude-dranken",
+      "price": 3.85,
+      "description": "",
+      "photo_prompt_hint": "Rivella"
+    },
+    {
+      "id": "orangina",
+      "name": "Orangina",
+      "category": "koude-dranken",
+      "price": 4.25,
+      "description": "",
+      "photo_prompt_hint": "Orangina"
+    },
+    {
+      "id": "lemonaid-blood-orange",
+      "name": "Lemonaid blood orange",
+      "category": "koude-dranken",
+      "price": 4.5,
+      "description": "",
+      "photo_prompt_hint": "Lemonaid blood orange"
+    },
+    {
+      "id": "bundaberg-ginger-beer",
+      "name": "Bundaberg ginger beer",
+      "category": "koude-dranken",
+      "price": 5.5,
+      "description": "",
+      "photo_prompt_hint": "Bundaberg ginger beer"
+    },
+    {
+      "id": "crodino",
+      "name": "Crodino",
+      "category": "koude-dranken",
+      "price": 4.5,
+      "description": "",
+      "photo_prompt_hint": "Crodino"
+    },
+    {
+      "id": "chocomel",
+      "name": "Chocomel",
+      "category": "koude-dranken",
+      "price": 3.85,
+      "description": "",
+      "photo_prompt_hint": "Chocomel"
+    },
+    {
+      "id": "water-plat-of-bruis-0-33l",
+      "name": "Water plat of bruis (0.33L)",
+      "category": "koude-dranken",
+      "price": 3.5,
+      "description": "",
+      "photo_prompt_hint": "Water plat of bruis (0.33L)"
+    },
+    {
+      "id": "berry-bomb-kersen-blauwe-bessen-cranberries",
+      "name": "Berry bomb (kersen, blauwe bessen, cranberries)",
+      "category": "smoothies",
+      "price": 6.25,
+      "description": "",
+      "photo_prompt_hint": "Berry bomb (kersen, blauwe bessen, cranberries)"
+    },
+    {
+      "id": "lovely-green-avocado-mango-spinazie-tarwegras-en-broccoli",
+      "name": "Lovely green (avocado, mango, spinazie, tarwegras en broccoli)",
+      "category": "smoothies",
+      "price": 6.25,
+      "description": "",
+      "photo_prompt_hint": "Lovely green (avocado, mango, spinazie, tarwegras en broccoli)"
+    },
+    {
+      "id": "hawaiian-dream-passievrucht-kokos-mango-acerola-kers-en-anan",
+      "name": "Hawaiian dream (passievrucht, kokos, mango, acerola kers en ananas)",
+      "category": "smoothies",
+      "price": 6.25,
+      "description": "",
+      "photo_prompt_hint": "Hawaiian dream (passievrucht, kokos, mango, acerola kers en ananas)"
+    },
+    {
+      "id": "verse-jus-d-orange",
+      "name": "Verse jus d'orange",
+      "category": "sappen",
+      "price": 5,
+      "description": "",
+      "photo_prompt_hint": "Verse jus d'orange"
+    },
+    {
+      "id": "tomatensap",
+      "name": "Tomatensap",
+      "category": "sappen",
+      "price": 4.5,
+      "description": "",
+      "photo_prompt_hint": "Tomatensap"
+    },
+    {
+      "id": "appelsap-flevosap",
+      "name": "Appelsap (Flevosap)",
+      "category": "sappen",
+      "price": 3.85,
+      "description": "",
+      "photo_prompt_hint": "Appelsap (Flevosap)"
+    },
+    {
+      "id": "perensap-schulp",
+      "name": "Perensap (Schulp)",
+      "category": "sappen",
+      "price": 3.85,
+      "description": "",
+      "photo_prompt_hint": "Perensap (Schulp)"
+    },
+    {
+      "id": "aardbeien-appelsap-schulp",
+      "name": "Aardbeien-appelsap (Schulp)",
+      "category": "sappen",
+      "price": 3.85,
+      "description": "",
+      "photo_prompt_hint": "Aardbeien-appelsap (Schulp)"
+    },
+    {
+      "id": "madame-gember-gember-limoenblad",
+      "name": "Madame gember (gember, limoenblad)",
+      "category": "sappen",
+      "price": 5,
+      "description": "",
+      "photo_prompt_hint": "Madame gember (gember, limoenblad)"
+    },
+    {
+      "id": "bloesem-power-vlierbloesem-limoenschil",
+      "name": "Bloesem power (vlierbloesem, limoenschil)",
+      "category": "sappen",
+      "price": 5,
+      "description": "",
+      "photo_prompt_hint": "Bloesem power (vlierbloesem, limoenschil)"
+    },
+    {
+      "id": "heineken-0-0-alcoholvrij",
+      "name": "Heineken 0.0% (alcoholvrij)",
+      "category": "bier-tap",
+      "price": 3.9,
+      "description": "",
+      "photo_prompt_hint": "Heineken 0.0% (alcoholvrij)"
+    },
+    {
+      "id": "affligem-blond",
+      "name": "Affligem Blond",
+      "category": "bier-tap",
+      "price": 6,
+      "description": "",
+      "photo_prompt_hint": "Affligem Blond"
+    },
+    {
+      "id": "brand-weizen",
+      "name": "Brand Weizen",
+      "category": "bier-tap",
+      "price": 5.5,
+      "description": "",
+      "photo_prompt_hint": "Brand Weizen"
+    },
+    {
+      "id": "frisse-neus-huisbiertje-van-brasserie-park",
+      "name": "Frisse Neus (huisbiertje van Brasserie Park)",
+      "category": "bier-tap",
+      "price": 5.75,
+      "description": "",
+      "photo_prompt_hint": "Frisse Neus (huisbiertje van Brasserie Park)"
+    },
+    {
+      "id": "affligem-dubbel",
+      "name": "Affligem Dubbel",
+      "category": "bier-tap",
+      "price": 6,
+      "description": "",
+      "photo_prompt_hint": "Affligem Dubbel"
+    },
+    {
+      "id": "seizoensbier-wisseltap-vraag-de-bediening",
+      "name": "Seizoensbier (wisseltap, vraag de bediening)",
+      "category": "bier-tap",
+      "price": 6,
+      "description": "",
+      "photo_prompt_hint": "Seizoensbier (wisseltap, vraag de bediening)"
+    },
+    {
+      "id": "affligem-tripel",
+      "name": "Affligem Tripel",
+      "category": "bier-fles",
+      "price": 6,
+      "description": "",
+      "photo_prompt_hint": "Affligem Tripel"
+    },
+    {
+      "id": "mort-subite-kriek-fruitig-kersenbier",
+      "name": "Mort Subite Kriek (fruitig kersenbier)",
+      "category": "bier-fles",
+      "price": 5.75,
+      "description": "",
+      "photo_prompt_hint": "Mort Subite Kriek (fruitig kersenbier)"
+    },
+    {
+      "id": "paulaner-duits-witbier",
+      "name": "Paulaner (Duits witbier)",
+      "category": "bier-fles",
+      "price": 6,
+      "description": "",
+      "photo_prompt_hint": "Paulaner (Duits witbier)"
+    },
+    {
+      "id": "sol-mexicaans-lagerbier",
+      "name": "Sol (Mexicaans lagerbier)",
+      "category": "bier-fles",
+      "price": 5.75,
+      "description": "",
+      "photo_prompt_hint": "Sol (Mexicaans lagerbier)"
+    },
+    {
+      "id": "straffe-hendrik-belgisch-blond",
+      "name": "Straffe Hendrik (Belgisch blond)",
+      "category": "bier-fles",
+      "price": 6,
+      "description": "",
+      "photo_prompt_hint": "Straffe Hendrik (Belgisch blond)"
+    },
+    {
+      "id": "duvel-sterk-blond",
+      "name": "Duvel (sterk blond)",
+      "category": "bier-fles",
+      "price": 6,
+      "description": "",
+      "photo_prompt_hint": "Duvel (sterk blond)"
+    },
+    {
+      "id": "la-chouffe-belgisch-blond-kruidig",
+      "name": "La Chouffe (Belgisch blond, kruidig)",
+      "category": "bier-fles",
+      "price": 6,
+      "description": "",
+      "photo_prompt_hint": "La Chouffe (Belgisch blond, kruidig)"
+    },
+    {
+      "id": "lagunitas-ipa-amerikaans-hop-bier",
+      "name": "Lagunitas IPA (Amerikaans hop-bier)",
+      "category": "bier-fles",
+      "price": 6,
+      "description": "",
+      "photo_prompt_hint": "Lagunitas IPA (Amerikaans hop-bier)"
+    },
+    {
+      "id": "straffe-hendrik-quadrupel-zwaar-belgisch",
+      "name": "Straffe Hendrik Quadrupel (zwaar Belgisch)",
+      "category": "bier-fles",
+      "price": 6.5,
+      "description": "",
+      "photo_prompt_hint": "Straffe Hendrik Quadrupel (zwaar Belgisch)"
+    },
+    {
+      "id": "radler-0-0",
+      "name": "Radler 0.0%",
+      "category": "alcoholvrij-bier",
+      "price": 4.5,
+      "description": "",
+      "photo_prompt_hint": "Radler 0.0%"
+    },
+    {
+      "id": "fop-neus-neipa-0-3-alcoholvrij-huisbiertje",
+      "name": "Fop Neus Neipa 0.3% (alcoholvrij huisbiertje)",
+      "category": "alcoholvrij-bier",
+      "price": 6,
+      "description": "",
+      "photo_prompt_hint": "Fop Neus Neipa 0.3% (alcoholvrij huisbiertje)"
+    },
+    {
+      "id": "brand-weizen-0-0",
+      "name": "Brand Weizen 0.0%",
+      "category": "alcoholvrij-bier",
+      "price": 5,
+      "description": "",
+      "photo_prompt_hint": "Brand Weizen 0.0%"
+    },
+    {
+      "id": "affligem-blond-0-0",
+      "name": "Affligem Blond 0.0%",
+      "category": "alcoholvrij-bier",
+      "price": 6,
+      "description": "",
+      "photo_prompt_hint": "Affligem Blond 0.0%"
+    },
+    {
+      "id": "texels-0-0",
+      "name": "Texels 0.0%",
+      "category": "alcoholvrij-bier",
+      "price": 5.5,
+      "description": "",
+      "photo_prompt_hint": "Texels 0.0%"
+    },
+    {
+      "id": "bombay-sapphire-citroen",
+      "name": "Bombay Sapphire (citroen)",
+      "category": "gin-tonic",
+      "price": 10,
+      "description": "",
+      "photo_prompt_hint": "Bombay Sapphire (citroen)"
+    },
+    {
+      "id": "hendrick-s-komkommer-zwarte-peper",
+      "name": "Hendrick's (komkommer, zwarte peper)",
+      "category": "gin-tonic",
+      "price": 11,
+      "description": "",
+      "photo_prompt_hint": "Hendrick's (komkommer, zwarte peper)"
+    },
+    {
+      "id": "goeie-mie-gin-uit-leiden-blauwe-bes-steranijs",
+      "name": "Goeie Mie (gin uit Leiden, blauwe bes, steranijs)",
+      "category": "gin-tonic",
+      "price": 11,
+      "description": "",
+      "photo_prompt_hint": "Goeie Mie (gin uit Leiden, blauwe bes, steranijs)"
+    },
+    {
+      "id": "aperol-spritz",
+      "name": "Aperol Spritz",
+      "category": "cocktails",
+      "price": 10,
+      "description": "",
+      "photo_prompt_hint": "Aperol Spritz"
+    },
+    {
+      "id": "tulip-spritz-tulpen-vodka-elderflower-limoen-munt",
+      "name": "Tulip Spritz (tulpen vodka, elderflower, limoen, munt)",
+      "category": "cocktails",
+      "price": 10,
+      "description": "",
+      "photo_prompt_hint": "Tulip Spritz (tulpen vodka, elderflower, limoen, munt)"
+    },
+    {
+      "id": "limoncello-spritz",
+      "name": "Limoncello Spritz",
+      "category": "cocktails",
+      "price": 10,
+      "description": "",
+      "photo_prompt_hint": "Limoncello Spritz"
+    },
+    {
+      "id": "le-st-germain-elderflower-prosecco-munt",
+      "name": "Le St. Germain (elderflower, prosecco, munt)",
+      "category": "cocktails",
+      "price": 10,
+      "description": "",
+      "photo_prompt_hint": "Le St. Germain (elderflower, prosecco, munt)"
+    },
+    {
+      "id": "espresso-martini",
+      "name": "Espresso Martini",
+      "category": "cocktails",
+      "price": 10,
+      "description": "",
+      "photo_prompt_hint": "Espresso Martini"
+    },
+    {
+      "id": "pornstar-martini",
+      "name": "Pornstar Martini",
+      "category": "cocktails",
+      "price": 10,
+      "description": "",
+      "photo_prompt_hint": "Pornstar Martini"
+    },
+    {
+      "id": "espresso-martin0",
+      "name": "Espresso Martin0%",
+      "category": "mocktails",
+      "price": 9,
+      "description": "",
+      "photo_prompt_hint": "Espresso Martin0%"
+    },
+    {
+      "id": "dark-no-stormy",
+      "name": "Dark no stormy",
+      "category": "mocktails",
+      "price": 8,
+      "description": "",
+      "photo_prompt_hint": "Dark no stormy"
+    },
+    {
+      "id": "ipanema",
+      "name": "Ipanema",
+      "category": "mocktails",
+      "price": 8.5,
+      "description": "",
+      "photo_prompt_hint": "Ipanema"
+    },
+    {
+      "id": "amaro-spritz-0-0",
+      "name": "Amaro Spritz 0.0%",
+      "category": "mocktails",
+      "price": 8.5,
+      "description": "",
+      "photo_prompt_hint": "Amaro Spritz 0.0%"
+    },
+    {
+      "id": "eau-de-parole-viognier-bloemig-abrikoos-perzik-languedoc",
+      "name": "Eau de Parole Viognier (bloemig, abrikoos, perzik (Languedoc))",
+      "category": "witte-wijn",
+      "price": 5.85,
+      "description": "",
+      "photo_prompt_hint": "Eau de Parole Viognier (bloemig, abrikoos, perzik (Languedoc))"
+    },
+    {
+      "id": "domaine-guillaman-chardonnay-ecologisch-gascogne",
+      "name": "Domaine Guillaman Chardonnay (ecologisch (Gascogne))",
+      "category": "witte-wijn",
+      "price": 6.25,
+      "description": "",
+      "photo_prompt_hint": "Domaine Guillaman Chardonnay (ecologisch (Gascogne))"
+    },
+    {
+      "id": "domaine-guillaman-sauvignon-colombard-ecologisch-gascogne",
+      "name": "Domaine Guillaman Sauvignon Colombard (ecologisch (Gascogne))",
+      "category": "witte-wijn",
+      "price": 5.85,
+      "description": "",
+      "photo_prompt_hint": "Domaine Guillaman Sauvignon Colombard (ecologisch (Gascogne))"
+    },
+    {
+      "id": "le-patapouf-chardonnay-rijk-en-romig-languedoc",
+      "name": "Le Patapouf Chardonnay (rijk en romig (Languedoc))",
+      "category": "witte-wijn",
+      "price": 6.75,
+      "description": "",
+      "photo_prompt_hint": "Le Patapouf Chardonnay (rijk en romig (Languedoc))"
+    },
+    {
+      "id": "naonis-pinot-grigio-fris-en-fruitig-friuli",
+      "name": "Naonis Pinot Grigio (fris en fruitig (Friuli))",
+      "category": "witte-wijn",
+      "price": 5.85,
+      "description": "",
+      "photo_prompt_hint": "Naonis Pinot Grigio (fris en fruitig (Friuli))"
+    },
+    {
+      "id": "winzer-krems-gruner-veltliner-kruidig-citrus-oostenrijk",
+      "name": "Winzer Krems Grüner Veltliner (kruidig, citrus (Oostenrijk))",
+      "category": "witte-wijn",
+      "price": 6.25,
+      "description": "",
+      "photo_prompt_hint": "Winzer Krems Grüner Veltliner (kruidig, citrus (Oostenrijk))"
+    },
+    {
+      "id": "argiolas-meri-vermentino-mineraal-fris-sardinie",
+      "name": "Argiolas Meri Vermentino (mineraal, fris (Sardinië))",
+      "category": "witte-wijn",
+      "price": 6.25,
+      "description": "",
+      "photo_prompt_hint": "Argiolas Meri Vermentino (mineraal, fris (Sardinië))"
+    },
+    {
+      "id": "naonis-pinot-grigio-blush-licht-en-fruitig-friuli",
+      "name": "Naonis Pinot Grigio Blush (licht en fruitig (Friuli))",
+      "category": "rose",
+      "price": 5.85,
+      "description": "",
+      "photo_prompt_hint": "Naonis Pinot Grigio Blush (licht en fruitig (Friuli))"
+    },
+    {
+      "id": "clobanel-rose-grenache-en-syrah-languedoc",
+      "name": "Clobanel Rosé (Grenache en Syrah (Languedoc))",
+      "category": "rose",
+      "price": 6.25,
+      "description": "",
+      "photo_prompt_hint": "Clobanel Rosé (Grenache en Syrah (Languedoc))"
+    },
+    {
+      "id": "eau-de-parole-merlot-zacht-en-fruitig-languedoc",
+      "name": "Eau de Parole Merlot (zacht en fruitig (Languedoc))",
+      "category": "rode-wijn",
+      "price": 5.85,
+      "description": "",
+      "photo_prompt_hint": "Eau de Parole Merlot (zacht en fruitig (Languedoc))"
+    },
+    {
+      "id": "de-haan-altes-tempranillo-vegan-kersen-en-specerijen-la-manc",
+      "name": "De Haan Altes Tempranillo (vegan, kersen en specerijen (La Mancha))",
+      "category": "rode-wijn",
+      "price": 6.25,
+      "description": "",
+      "photo_prompt_hint": "De Haan Altes Tempranillo (vegan, kersen en specerijen (La Mancha))"
+    },
+    {
+      "id": "dumanet-cabernet-sauvignon-vol-en-stevig-languedoc",
+      "name": "Dumanet Cabernet Sauvignon (vol en stevig (Languedoc))",
+      "category": "rode-wijn",
+      "price": 6.25,
+      "description": "",
+      "photo_prompt_hint": "Dumanet Cabernet Sauvignon (vol en stevig (Languedoc))"
+    },
+    {
+      "id": "saint-seine-pinot-noir-elegant-rood-fruit-languedoc",
+      "name": "Saint Seine Pinot Noir (elegant, rood fruit (Languedoc))",
+      "category": "rode-wijn",
+      "price": 6.75,
+      "description": "",
+      "photo_prompt_hint": "Saint Seine Pinot Noir (elegant, rood fruit (Languedoc))"
+    },
+    {
+      "id": "la-doncella-tempranillo-soepel-en-fruitig",
+      "name": "La Doncella Tempranillo (soepel en fruitig)",
+      "category": "rode-wijn",
+      "price": 5.85,
+      "description": "",
+      "photo_prompt_hint": "La Doncella Tempranillo (soepel en fruitig)"
+    },
+    {
+      "id": "le-patapouf-malbec-donker-fruit-kruidig-languedoc",
+      "name": "Le Patapouf Malbec (donker fruit, kruidig (Languedoc))",
+      "category": "rode-wijn",
+      "price": 6.75,
+      "description": "",
+      "photo_prompt_hint": "Le Patapouf Malbec (donker fruit, kruidig (Languedoc))"
+    },
+    {
+      "id": "prosecco-spumante-doc-naonis-fris-en-feestelijk-friuli",
+      "name": "Prosecco Spumante DOC Naonis (fris en feestelijk (Friuli))",
+      "category": "bubbels",
+      "price": 6.5,
+      "description": "",
+      "photo_prompt_hint": "Prosecco Spumante DOC Naonis (fris en feestelijk (Friuli))"
+    },
+    {
+      "id": "bubb-cremant-brut-prestige-fijne-bubbels-alsace",
+      "name": "Bubb Crémant Brut Prestige (fijne bubbels (Alsace))",
+      "category": "bubbels",
+      "price": 7.5,
+      "description": "",
+      "photo_prompt_hint": "Bubb Crémant Brut Prestige (fijne bubbels (Alsace))"
+    },
+    {
+      "id": "mille-bolle-moscato-0-0-alcoholvrij-zoet-en-fruitig-veneto",
+      "name": "Mille bolle Moscato 0.0% (alcoholvrij, zoet en fruitig (Veneto))",
+      "category": "bubbels",
+      "price": 5.5,
+      "description": "",
+      "photo_prompt_hint": "Mille bolle Moscato 0.0% (alcoholvrij, zoet en fruitig (Veneto))"
+    },
+    {
+      "id": "castel-firmian-moscato-giallo-zoet-bloemig",
+      "name": "Castel Firmian Moscato giallo (zoet, bloemig)",
+      "category": "dessertwijn",
+      "price": 6.5,
+      "description": "",
+      "photo_prompt_hint": "Castel Firmian Moscato giallo (zoet, bloemig)"
+    },
+    {
+      "id": "pedro-ximenez-sherry-rijk-rozijnen-dadels",
+      "name": "Pedro Ximenez Sherry (rijk, rozijnen, dadels)",
+      "category": "dessertwijn",
+      "price": 6.5,
+      "description": "",
+      "photo_prompt_hint": "Pedro Ximenez Sherry (rijk, rozijnen, dadels)"
+    }
+  ]
+}

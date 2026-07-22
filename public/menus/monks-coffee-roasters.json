@@ -1,0 +1,31 @@
+{
+  "vendor": {
+    "name": "Monks Coffee Roasters",
+    "slug": "monks-coffee-roasters",
+    "currency": "EUR",
+    "locale": "nl-NL"
+  },
+  "location": {
+    "address": "Bilderdijkstraat 46, 1052 NB Amsterdam",
+    "area": "Da Costabuurt, Oud-West",
+    "city": "Amsterdam",
+    "lat": 52.365,
+    "lng": 4.873,
+    "phone": "+31 6 23131661",
+    "hours": {
+      "mon": "08:00-16:00",
+      "tue": "08:00-16:00",
+      "wed": "08:00-16:00",
+      "thu": "08:00-16:00",
+      "fri": "08:00-16:00",
+      "sat": "09:00-16:00",
+      "sun": "09:00-16:00"
+    }
+  },
+  "menu_status": "coming_soon",
+  "prices_verified": false,
+  "photo_provider": "flux-pro",
+  "photo_style": "bright airy Amsterdam specialty coffee bar, natural window light, minimalist third-wave aesthetic, professional photography, 4K",
+  "categories": [],
+  "items": []
+}

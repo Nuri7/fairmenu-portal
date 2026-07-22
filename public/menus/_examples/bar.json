@@ -1,0 +1,206 @@
+{
+  "vendor": {
+    "name": "Bar",
+    "slug": "_example-bar",
+    "currency": "EUR",
+    "locale": "nl-NL"
+  },
+  "example": true,
+  "photo_base": "_shared",
+  "categories": [
+    {
+      "id": "koffie",
+      "name": "Koffie"
+    },
+    {
+      "id": "koude-dranken",
+      "name": "Koude dranken"
+    },
+    {
+      "id": "borrel",
+      "name": "Borrel"
+    },
+    {
+      "id": "zoet",
+      "name": "Zoet"
+    }
+  ],
+  "items": [
+    {
+      "id": "espresso",
+      "name": "Espresso",
+      "category": "koffie",
+      "price": 3,
+      "description": "",
+      "photo_shared": true
+    },
+    {
+      "id": "americano",
+      "name": "Americano",
+      "category": "koffie",
+      "price": 3.5,
+      "description": "",
+      "photo_shared": true
+    },
+    {
+      "id": "cappuccino",
+      "name": "Cappuccino",
+      "category": "koffie",
+      "price": 3.6,
+      "description": "",
+      "photo_shared": true
+    },
+    {
+      "id": "cold-brew",
+      "name": "Cold brew",
+      "category": "koffie",
+      "price": 4.5,
+      "description": "",
+      "photo_shared": true
+    },
+    {
+      "id": "iced-latte",
+      "name": "Iced latte",
+      "category": "koffie",
+      "price": 4.5,
+      "description": "",
+      "photo_shared": true
+    },
+    {
+      "id": "cola",
+      "name": "Cola",
+      "category": "koude-dranken",
+      "price": 3,
+      "description": "",
+      "photo_shared": true
+    },
+    {
+      "id": "gemberbier",
+      "name": "Ginger beer",
+      "category": "koude-dranken",
+      "price": 3.6,
+      "description": "",
+      "photo_shared": true
+    },
+    {
+      "id": "ice-tea",
+      "name": "Verse ice tea",
+      "category": "koude-dranken",
+      "price": 3.8,
+      "description": "",
+      "photo_shared": true
+    },
+    {
+      "id": "bruiswater",
+      "name": "Bruiswater",
+      "category": "koude-dranken",
+      "price": 2.8,
+      "description": "",
+      "photo_shared": true
+    },
+    {
+      "id": "kombucha",
+      "name": "Kombucha",
+      "category": "koude-dranken",
+      "price": 4.2,
+      "description": "",
+      "photo_shared": true
+    },
+    {
+      "id": "bitterballen",
+      "name": "Bitterballen (8 st)",
+      "category": "borrel",
+      "price": 8,
+      "description": "",
+      "photo_shared": true
+    },
+    {
+      "id": "kaasplankje",
+      "name": "Kaasplankje",
+      "category": "borrel",
+      "price": 12.5,
+      "description": "",
+      "photo_shared": true
+    },
+    {
+      "id": "worstplankje",
+      "name": "Worstplankje",
+      "category": "borrel",
+      "price": 12.5,
+      "description": "",
+      "photo_shared": true
+    },
+    {
+      "id": "olijven",
+      "name": "Olijven",
+      "category": "borrel",
+      "price": 4.5,
+      "description": "",
+      "photo_shared": true
+    },
+    {
+      "id": "nachos",
+      "name": "Nacho's",
+      "category": "borrel",
+      "price": 8.5,
+      "description": "",
+      "photo_shared": true
+    },
+    {
+      "id": "hummus",
+      "name": "Hummus met brood",
+      "category": "borrel",
+      "price": 7.5,
+      "description": "",
+      "photo_shared": true
+    },
+    {
+      "id": "loaded-fries",
+      "name": "Loaded fries",
+      "category": "borrel",
+      "price": 7.5,
+      "description": "",
+      "photo_shared": true
+    },
+    {
+      "id": "patat",
+      "name": "Friet met mayo",
+      "category": "borrel",
+      "price": 4.5,
+      "description": "",
+      "photo_shared": true
+    },
+    {
+      "id": "gemengde-noten",
+      "name": "Gemengde noten",
+      "category": "borrel",
+      "price": 4,
+      "description": "",
+      "photo_shared": true
+    },
+    {
+      "id": "gyoza",
+      "name": "Gyoza (5 st)",
+      "category": "borrel",
+      "price": 7,
+      "description": "",
+      "photo_shared": true
+    },
+    {
+      "id": "brownie",
+      "name": "Brownie",
+      "category": "zoet",
+      "price": 4,
+      "description": "",
+      "photo_shared": true
+    },
+    {
+      "id": "cheesecake",
+      "name": "New York cheesecake",
+      "category": "zoet",
+      "price": 5.5,
+      "description": "",
+      "photo_shared": true
+    }
+  ]
+}
