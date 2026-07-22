@@ -24,6 +24,8 @@ dist-ssr
 *.sw?
 .vercel
 .geocode-cache.json
+/test-results/
+/playwright-report/
 
 # local env
 .env
