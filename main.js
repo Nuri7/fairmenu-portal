@@ -111,7 +111,8 @@ function runSearch(term) {
   if (nearby) focusUser(userFix, effectiveRadius());
 }
 
-// "Alleen echte menu's" toggle — isolates the verified cafés (red pins).
+// "Verified" toggle — shows every menu with menu_verified = true,
+// independently of whether the venue has already been claimed.
 verifiedBtn.addEventListener('click', () => {
   verifiedOnly = !verifiedOnly;
   verifiedBtn.classList.toggle('is-on', verifiedOnly);

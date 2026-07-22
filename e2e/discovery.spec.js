@@ -17,7 +17,7 @@ test('loads venues, searches, filters and clears the result', async ({ page }) =
   await page.getByRole('button', { name: 'Wissen' }).click();
   await expect(page.locator('#placeCount')).toHaveText('1 zaak');
 
-  const verified = page.getByRole('button', { name: "Alleen echte menu's" });
+  const verified = page.getByRole('button', { name: 'Verified' });
   await verified.click();
   await expect(verified).toHaveAttribute('aria-pressed', 'true');
 
