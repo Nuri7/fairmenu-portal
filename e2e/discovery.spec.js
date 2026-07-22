@@ -24,7 +24,9 @@ test('loads venues, searches, filters and clears the result', async ({ page }) =
   const discount = page.getByRole('button', { name: 'Met korting' });
   await discount.click();
   await expect(discount).toHaveAttribute('aria-pressed', 'true');
-  await expect(page.locator('#placeCount')).toHaveText('1 zaak');
+  // The verified unclaimed menu remains discoverable, but discounts only
+  // become active after the venue is claimed.
+  await expect(page.locator('#placeCount')).toHaveText('0 zaken');
 });
 
 test('opens a venue menu and maintains the cart total', async ({ page }) => {
@@ -34,6 +36,7 @@ test('opens a venue menu and maintains the cart total', async ({ page }) => {
   await page.locator('.leaflet-marker-icon:visible').click();
   const popup = page.locator('.leaflet-popup:visible .fm-popup').last();
   await expect(popup).toContainText(venue.name);
+  await expect(popup.getByRole('button')).toHaveText(['Open menu', 'Claim deze zaak']);
   await popup.getByRole('button', { name: /Bekijk menu|Open menu/ }).click();
 
   const dialog = page.getByRole('dialog');

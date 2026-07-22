@@ -12,7 +12,7 @@ export async function loadShops() {
   try {
     const { data, error } = await supabase
       .from('tenants')
-      .select('slug, name, address, city, status, category, lat, lng, discount_pct, menu_items(count)')
+      .select('slug, name, address, city, status, category, lat, lng, discount_pct, menu_verified, menu_items(count)')
       .in('status', ['active', 'unclaimed', 'pending'])
       .limit(1000);
 
@@ -33,9 +33,12 @@ export async function loadShops() {
         lat: tenant.lat,
         lng: tenant.lng,
         hasMenu: menuCount > 0,
+        claimed: live,
         comingSoon: tenant.status === 'unclaimed',
         pendingClaim: tenant.status === 'pending',
-        verified: live,
+        // A verified menu is real regardless of whether the venue has claimed
+        // its listing. Claim status controls management, not discovery.
+        verified: tenant.menu_verified === true,
         discountPct: live ? (tenant.discount_pct ?? 0) : 0,
       };
     });

@@ -4,11 +4,12 @@ export const venue = {
   name: 'Test Café',
   address: 'Teststraat 1',
   city: 'Amsterdam',
-  status: 'active',
+  status: 'unclaimed',
   category: 'Café',
   lat: 52.3702,
   lng: 4.8952,
   discount_pct: 10,
+  menu_verified: true,
   menu_items: [{ count: 1 }],
 };
 

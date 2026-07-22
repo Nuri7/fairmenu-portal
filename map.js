@@ -144,12 +144,14 @@ function renderMarkers(shops, mode) {
     const meta = [addr, dist !== null ? `op ${fmtDist(dist)}` : null]
       .filter(Boolean).join(' · ');
 
-    // "Open menu" (whenever this venue has a menu) sits above the claim / pending action.
+    // A menu is visible independently of claim status. For an unclaimed venue,
+    // "Open menu" sits directly above the claim action.
     const btns = [];
-    if (shop.verified) {
-      btns.push('<button class="fm-popup__btn" data-act="menu">Bekijk menu</button>');
-    } else {
-      if (shop.hasMenu) btns.push('<button class="fm-popup__btn" data-act="menu">Open menu</button>');
+    if (shop.hasMenu) {
+      const menuLabel = shop.claimed ? 'Bekijk menu' : 'Open menu';
+      btns.push(`<button class="fm-popup__btn" data-act="menu">${menuLabel}</button>`);
+    }
+    if (!shop.claimed) {
       const ghost = shop.hasMenu ? ' fm-popup__btn--ghost' : '';
       if (shop.pendingClaim) btns.push(`<button class="fm-popup__btn${ghost}" data-act="pending">Pending claim</button>`);
       else btns.push(`<button class="fm-popup__btn${ghost}" data-act="claim">Claim deze zaak</button>`);
