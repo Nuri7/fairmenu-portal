@@ -58,7 +58,9 @@ async function loadMenuFromDb(shop) {
         id: i.id,
         name: i.name,
         category: i.category_id,
-        price: i.price_cents == null ? (vanaf ?? 0) : i.price_cents / 100,
+        // A source can publish its assortment without prices. Preserve null so
+        // the portal leaves the price blank instead of inventing "€ 0,00".
+        price: i.price_cents == null ? vanaf : i.price_cents / 100,
         description: i.description || '',
         tags: i.tags || [],
         _image_url: i.image_url || null,
