@@ -1,8 +1,5 @@
-// In-portal vendor detail view: menu + Oracle quiz, rendered in a full-screen
-// overlay so the user never leaves the portal.
-
-import { buildQuestions, recommend } from './quiz.js';
-import placesData from './public/places-data.json';
+// In-portal vendor detail view, rendered in a full-screen overlay so the user
+// never leaves the portal.
 import {
   isLoggedIn, isFavorite, toggleFavorite,
   usesAccounts, getAccessToken, refreshWallet,
@@ -17,20 +14,10 @@ const fmtPrice = (p, ccy = 'EUR', locale = 'nl-NL') =>
 
 const menuCache = new Map();
 
-// Map a café to an example-menu archetype by its category.
-function archetypeFor(shop) {
-  const c = (shop.category || '').toLowerCase();
-  if (c.includes('restaurant') || c.includes('lunch')) return 'lunchroom';
-  if (c.includes('bar')) return 'bar';
-  if (c.includes('dessert') || c.includes('bakery') || c.includes('patisserie')) return 'bakery';
-  return 'cafe'; // Cafes, Tea Houses, default
-}
-
 import { supabase, hasSupabase } from './supabase.js';
 import { foodEmoji } from './food-emoji.js';
 
-// DB-first: live tenants serve the SAME menu the vendor edits in their
-// tenant admin. Falls back to the legacy static/example menus.
+// Live tenants serve the same menu the vendor edits in tenant admin.
 async function loadMenuFromDb(shop) {
   if (!hasSupabase) return null;
   const { data: t, error } = await supabase
@@ -108,42 +95,14 @@ async function loadPaySettings(slug) {
 async function loadMenu(shop) {
   const shopId = shop.id;
   if (menuCache.has(shopId)) return menuCache.get(shopId);
-  // Live tenants: the FairMenu database is the single source of truth.
-  try {
-    const dbMenu = await loadMenuFromDb(shop);
-    if (dbMenu) {
-      dbMenu._shopId = shopId;
-      dbMenu._isExample = false;
-      menuCache.set(shopId, dbMenu);
-      return dbMenu;
-    }
-  } catch { /* fall through to static menus */ }
-  // Prefer the café's own menu; fall back to a shared archetype example menu.
-  let res = await fetch(`menus/${shopId}.json`, { cache: 'no-cache' });
-  let isExample = false;
-  if (!res.ok) {
-    res = await fetch(`menus/_examples/${archetypeFor(shop)}.json`, { cache: 'no-cache' });
-    isExample = true;
-    if (!res.ok) throw new Error(`no menu for ${shopId}: ${res.status}`);
-  }
-  const menu = await res.json();
-  menu._shopId = shopId;
-  menu._isExample = isExample || !!menu.example;
+  const menu = await loadMenuFromDb(shop);
+  if (!menu) throw new Error(`Geen menu voor ${shopId}`);
   menuCache.set(shopId, menu);
   return menu;
 }
 
-// Example menus pull from the shared photo library; real menus from the
-// café's own folder.
-const photoSrc = (menu, itemId) => {
-  if (menu?._db) {
-    const item = menu.items.find((i) => i.id === itemId);
-    return item?._image_url || null; // null → emoji tile (altijd een plaatje)
-  }
-  return menu?.photo_base === '_shared'
-    ? `menus/images/_shared/${itemId}.png`
-    : `menus/images/${menu?._shopId}/${itemId}.png`;
-};
+const photoSrc = (menu, itemId) =>
+  menu?.items.find((item) => item.id === itemId)?._image_url || null;
 
 // Fill a photo container: real photo when we have one, else the same
 // emoji placeholder the tenant sites use.
@@ -318,15 +277,6 @@ function renderMenu(root, menu) {
   const locale = menu.vendor?.locale || 'nl-NL';
   const body = root.querySelector('.d-body');
   body.innerHTML = '';
-
-  // Clearly flag example menus — items/prices are illustrative, not the café's own.
-  if (menu._isExample) {
-    const note = document.createElement('div');
-    note.className = 'd-pricenote d-pricenote--example';
-    note.innerHTML = `<span class="d-example-txt">ⓘ <strong>Voorbeeldmenu</strong> — dit is een indicatie, niet het echte menu van deze zaak.</span>
-      <a class="d-example-claim" href="https://fairmenu.app/claim" target="_blank" rel="noopener noreferrer">Is dit jouw zaak? Claim &apos;m &rarr;</a>`;
-    body.appendChild(note);
-  }
 
   // Zaak doet (nog) niet mee: geen bestelknoppen, dus zou de kaart doodlopen.
   // In plaats van de gast te vragen de ondernemer te overtuigen, vangen we zijn
@@ -557,7 +507,7 @@ function showOrder() {
           });
           const data = await res.json();
           if (res.status === 401) {
-            window.dispatchEvent(new CustomEvent('cm:need-login',
+            window.dispatchEvent(new CustomEvent('fm:need-login',
               { detail: { hint: 'Log in met je FairMenu-profiel om je tegoed te gebruiken.' } }));
             throw new Error('Log in om je tegoed te gebruiken.');
           }
@@ -602,74 +552,9 @@ function showOrder() {
   body.querySelector('[data-act="clear"]').onclick = () => { resetOrder(menu); renderMenu(overlay, menu); };
 }
 
-// ---- Quiz flow ----
-function runQuiz(root, menu) {
-  const questions = buildQuestions(menu);
-  const answers = {};
-  const body = root.querySelector('.d-body');
-  let step = 0;
-
-  const showResult = () => {
-    const shopId = menu._shopId;
-    const { primary, runnersUp } = recommend(menu, answers);
-    const ccy = menu.vendor?.currency || 'EUR';
-    const locale = menu.vendor?.locale || 'nl-NL';
-
-    body.innerHTML = `
-      <div class="d-quiz d-result">
-        <p class="d-result__kicker">De Oracle raadt aan</p>
-        <div class="d-result__card">
-          <div class="d-result__photo"></div>
-          <h3>${primary.name}</h3>
-          <p class="d-result__price">${fmtPrice(primary.price, ccy, locale)}</p>
-          <p class="d-result__desc">${primary.description || ''}</p>
-        </div>
-        ${runnersUp.length ? `<p class="d-result__also">Ook lekker: ${runnersUp.map(r => r.name).join(' · ')}</p>` : ''}
-        <div class="d-result__actions">
-          <button class="btn btn-secondary" data-act="again"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/></svg> Opnieuw</button>
-          <button class="btn btn-primary" data-act="menu">Bekijk hele menu</button>
-        </div>
-      </div>`;
-    fillPhoto(body.querySelector('.d-result__photo'), menu, primary);
-    body.querySelector('[data-act="again"]').addEventListener('click', () => runQuiz(root, menu));
-    body.querySelector('[data-act="menu"]').addEventListener('click', () => renderMenu(root, menu));
-  };
-
-  const showStep = () => {
-    if (step >= questions.length) return showResult();
-    const q = questions[step];
-    body.innerHTML = `
-      <div class="d-quiz">
-        <div class="d-quiz__progress">${step + 1} / ${questions.length}</div>
-        <h3 class="d-quiz__q">${q.prompt}</h3>
-        <div class="d-quiz__opts"></div>
-      </div>`;
-    const opts = body.querySelector('.d-quiz__opts');
-    q.options.forEach((o, i) => {
-      const btn = document.createElement('button');
-      btn.className = 'd-opt';
-      btn.textContent = o.label;
-      btn.addEventListener('click', () => {
-        answers[q.id] = o.value;
-        step++;
-        showStep();
-      });
-      opts.appendChild(btn);
-    });
-  };
-
-  showStep();
-}
-
 // ---- Overlay shell ----
 // Inline SVGs so the critical controls never depend on the lucide CDN loading.
 const ICON_BACK = `<svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg>`;
-const ICON_SPARK = `<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.94 14.06 3 21m9-13 1.5 3.5L17 13l-3.5 1.5L12 18l-1.5-3.5L7 13l3.5-1.5z"/></svg>`;
-
-// Feature flag: show the "Vraag de Oracle" entry point. Off since 2026-07-19 —
-// the quiz stays in the codebase and keeps working; it is simply not surfaced
-// until it is good enough and also available on a tenant's own menu page.
-const SHOW_ORACLE = false;
 
 let overlay;
 let isOpen = false;
@@ -686,7 +571,6 @@ function ensureOverlay() {
         <button class="d-back" type="button" aria-label="Terug">${ICON_BACK}</button>
         <div class="d-head__title"><h2></h2><span class="d-head__loc"></span></div>
         <button class="d-fav" type="button" data-act="fav" aria-label="Favoriet">${ICON_HEART}</button>
-        <button class="d-oracle" type="button" data-act="oracle">${ICON_SPARK} Vraag de Oracle</button>
       </header>
       <div class="d-body"></div>
     </div>`;
@@ -725,12 +609,12 @@ function doClose() {
 function markOpen() {
   isOpen = true;
   if (!historyPushed) {
-    history.pushState({ cmOverlay: true }, '');
+    history.pushState({ fmOverlay: true }, '');
     historyPushed = true;
   }
 }
 
-export async function openVendor(shop, opts = {}) {
+export async function openVendor(shop) {
   const ov = ensureOverlay();
   ov.hidden = false;
   document.body.style.overflow = 'hidden';
@@ -746,7 +630,7 @@ export async function openVendor(shop, opts = {}) {
   syncFav();
   favBtn.onclick = () => {
     if (toggleFavorite(shop.id)) syncFav();
-    else window.dispatchEvent(new CustomEvent('cm:need-login',
+    else window.dispatchEvent(new CustomEvent('fm:need-login',
       { detail: { hint: 'Maak een profiel om cafés als favoriet te bewaren.' } }));
   };
 
@@ -754,7 +638,6 @@ export async function openVendor(shop, opts = {}) {
   onOrderChange.clear();
   ov.querySelector('.d-cartbar')?.remove();
 
-  const oracleBtn = ov.querySelector('[data-act="oracle"]');
   try {
     const menu = await loadMenu(shop);
     // Vers ophalen bij élke opening — zie loadPaySettings. Het menu mag gecached
@@ -767,60 +650,27 @@ export async function openVendor(shop, opts = {}) {
       menu._walletEnabled = st.walletEnabled;
     }
     resetOrder(menu);
-    const hasMenu = menu.menu_status !== 'coming_soon' && menu.items && menu.items.length;
-    // Oracle quiz only for a café's real, tagged menu — not example menus.
-    // SHOW_ORACLE is off on purpose (2026-07-19): the quiz itself is untouched and still
-    // works, we just don't surface it yet — it needs to be better, and it should also live
-    // on a tenant's own menu page, not only here. Set SHOW_ORACLE = true to bring it back.
-    const oracleOk = SHOW_ORACLE && hasMenu && !menu._isExample;
-    oracleBtn.style.display = oracleOk ? '' : 'none';
-    if (hasMenu) {
-      if (oracleOk) {
-        oracleBtn.onclick = () => runQuiz(ov, menu);
-        if (opts.oracle) runQuiz(ov, menu);
-        else renderMenu(ov, menu);
-      } else {
-        renderMenu(ov, menu);
-      }
-    } else {
-      renderInfo(ov, shop);
-    }
+    renderMenu(ov, menu);
   } catch (err) {
-    // Nothing to show (no own menu and no example) → café info from Google.
-    oracleBtn.style.display = 'none';
     renderInfo(ov, shop);
   }
 }
 
-// Café info panel for listings without a menu yet: rating, address, opening
-// hours + Maps — all from the bundled Google Places data.
+// Listings without a menu still expose the address and claim route. OpenStreetMap
+// provides navigation without pulling in a commercial map product.
 function renderInfo(root, shop) {
-  const info = placesData[shop.id] || {};
   const body = root.querySelector('.d-body');
-  const rating = typeof info.rating === 'number' ? `★ ${info.rating.toFixed(1)}` : '';
-  // Places Nearby returned English day names for the bulk import → localise.
-  const DAY_NL = {
-    Monday: 'Maandag', Tuesday: 'Dinsdag', Wednesday: 'Woensdag', Thursday: 'Donderdag',
-    Friday: 'Vrijdag', Saturday: 'Zaterdag', Sunday: 'Zondag',
-  };
-  const hoursRows = Array.isArray(info.hours)
-    ? info.hours.map((line) => {
-        const [day, ...rest] = line.split(': ');
-        const nl = DAY_NL[day] || day.charAt(0).toUpperCase() + day.slice(1);
-        return `<div class="cs-hrow"><span>${nl}</span><span>${rest.join(': ') || '–'}</span></div>`;
-      }).join('')
-    : '';
-  const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent((shop.name || '') + ' ' + (info.address || 'Amsterdam'))}`;
+  const mapsUrl = `https://www.openstreetmap.org/search?query=${encodeURIComponent(
+    `${shop.name || ''} ${shop.address || shop.location || 'Amsterdam'}`
+  )}`;
 
   body.innerHTML = `
     <div class="cs">
       <div class="cs-head">
         <span class="cs-badge">Menu volgt binnenkort</span>
-        ${rating ? `<span class="cs-rating">${rating}</span>` : ''}
       </div>
-      ${info.address ? `<p class="cs-addr">📍 ${info.address}</p>` : ''}
-      <a class="btn btn-primary cs-maps" href="${mapsUrl}" target="_blank" rel="noopener noreferrer">Open in Maps</a>
-      ${hoursRows ? `<div class="cs-hours"><h4>Openingstijden</h4>${hoursRows}</div>` : ''}
+      ${shop.address ? `<p class="cs-addr">📍 ${shop.address}</p>` : ''}
+      <a class="btn btn-primary cs-maps" href="${mapsUrl}" target="_blank" rel="noopener noreferrer">Open op de kaart</a>
       <div class="cs-claim">
         <p>Ben jij de eigenaar? Zet je échte menu online met AI-foto's — gratis.</p>
         <a class="btn btn-secondary" href="https://fairmenu.app/claim" target="_blank" rel="noopener noreferrer">Claim je zaak</a>

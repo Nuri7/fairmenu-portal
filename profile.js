@@ -32,7 +32,7 @@ function ensureModal() {
   return modal;
 }
 
-export function closeProfile() {
+function closeProfile() {
   if (modal) { modal.hidden = true; document.body.style.overflow = ''; }
 }
 

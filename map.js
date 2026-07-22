@@ -5,8 +5,6 @@ import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import 'leaflet.markercluster';
 import 'leaflet.markercluster/dist/MarkerCluster.css';
-import { coords } from './coords.js';
-import placesData from './public/places-data.json';
 import { haversineM, fmtDist, GEO_ACCURACY_MAX } from './geo.js';
 
 // Brand-green cluster bubble showing the count.
@@ -14,21 +12,10 @@ function clusterIcon(cluster) {
   const n = cluster.getChildCount();
   const size = n < 10 ? 34 : n < 25 ? 40 : 46;
   return L.divIcon({
-    html: `<div class="cm-cluster"><span>${n}</span></div>`,
-    className: 'cm-cluster-wrap',
+    html: `<div class="fm-cluster"><span>${n}</span></div>`,
+    className: 'fm-cluster-wrap',
     iconSize: [size, size],
   });
-}
-
-// Google's weekdayDescriptions run maandag..zondag (Mon..Sun); JS getDay() is
-// Sun=0..Sat=6. Return today's "07:30–18:00" part, or null.
-function todayHours(hours) {
-  if (!Array.isArray(hours) || !hours.length) return null;
-  const idx = (new Date().getDay() + 6) % 7; // Mon=0 … Sun=6
-  const line = hours[idx];
-  if (!line) return null;
-  const t = line.split(': ')[1];
-  return t && !/gesloten/i.test(t) ? t : (t || null);
 }
 
 // Amsterdam bounding box — used to auto-fit on the city and ignore the few
@@ -36,11 +23,10 @@ function todayHours(hours) {
 const AMS = { latMin: 52.30, latMax: 52.43, lngMin: 4.80, lngMax: 4.99 };
 const inAmsterdam = ([lat, lng]) => lat >= AMS.latMin && lat <= AMS.latMax && lng >= AMS.lngMin && lng <= AMS.lngMax;
 
-// coords[] is de enige bron van waarheid: shop-objecten uit loadShops() hebben
-// géén lat/lng-velden (data.js schrijft de DB-waarden weg naar coords).
-export const shopCoords = (shop) => coords[shop.id] || null;
+const shopCoords = (shop) =>
+  shop.lat == null || shop.lng == null ? null : [shop.lat, shop.lng];
 
-export function distanceTo(shop, pos) {
+function distanceTo(shop, pos) {
   const c = shopCoords(shop);
   return c ? haversineM(pos.lat, pos.lng, c[0], c[1]) : null;
 }
@@ -78,7 +64,7 @@ function pinIcon(shop) {
          <circle cx="17" cy="17" r="8.5" fill="#FAFAED"/>
          <path d="M12.6 17.3l3 3 5.8-6" fill="none" stroke="#d33a2c" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
        </svg>`;
-    return L.divIcon({ html, className: 'cm-pin cm-pin--verified', iconSize: [34, 46], iconAnchor: [17, 46], popupAnchor: [0, -44] });
+    return L.divIcon({ html, className: 'fm-pin fm-pin--verified', iconSize: [34, 46], iconAnchor: [17, 46], popupAnchor: [0, -44] });
   }
   const fill = shop.pendingClaim ? '#e0a83b' : (shop.comingSoon ? '#a8a48f' : '#4A5D23');
   const html =
@@ -86,7 +72,7 @@ function pinIcon(shop) {
        <path d="M15 0C6.7 0 0 6.7 0 15c0 10 15 25 15 25s15-15 15-25C30 6.7 23.3 0 15 0z" fill="${fill}"/>
        <circle cx="15" cy="15" r="6" fill="#FAFAED"/>
      </svg>`;
-  return L.divIcon({ html, className: 'cm-pin', iconSize: [30, 40], iconAnchor: [15, 40], popupAnchor: [0, -38] });
+  return L.divIcon({ html, className: 'fm-pin', iconSize: [30, 40], iconAnchor: [15, 40], popupAnchor: [0, -38] });
 }
 
 let map = null;
@@ -123,8 +109,8 @@ export function ensureMap(container, shops, onOpen) {
     // Eigen pane boven de pins (markerPane 600) maar onder tooltip (650) en
     // popup (700). pointerEvents none: de stip mag nooit een tik opvangen die
     // voor een pin eronder bedoeld is.
-    map.createPane('cm-locate');
-    const lp = map.getPane('cm-locate');
+    map.createPane('fm-locate');
+    const lp = map.getPane('fm-locate');
     lp.style.zIndex = 640;
     lp.style.pointerEvents = 'none';
     locateLayer = L.layerGroup().addTo(map);   // op de map, NIET in cluster
@@ -146,45 +132,41 @@ function renderMarkers(shops, mode) {
   const amsBounds = [];
   const markers = [];
   for (const shop of shops) {
-    const c = coords[shop.id];
+    const c = shopCoords(shop);
     if (!c) continue;
     const marker = L.marker(c, { icon: pinIcon(shop), zIndexOffset: shop.verified ? 1000 : 0 });
 
-    const info = placesData[shop.id] || {};
-    const rating = typeof info.rating === 'number'
-      ? `<span class="cm-popup__rating">★ ${info.rating.toFixed(1)}</span>` : '';
-    const addr = info.address ? info.address.split(',')[0] : shop.location;
-    const hrs = todayHours(info.hours);
+    const addr = shop.address ? shop.address.split(',')[0] : shop.location;
     // Bij een fix die te grof is om op te filteren, is "op 340 m" verzonnen
     // precisie — dan alleen de stip + cirkel, geen afstand in de popup.
     const usable = userPos && userPos.accuracy <= GEO_ACCURACY_MAX;
     const dist = usable ? distanceTo(shop, userPos) : null;
-    const meta = [addr, dist !== null ? `op ${fmtDist(dist)}` : null,
-                  hrs ? `Vandaag ${hrs}` : null].filter(Boolean).join(' · ');
+    const meta = [addr, dist !== null ? `op ${fmtDist(dist)}` : null]
+      .filter(Boolean).join(' · ');
 
     // "Open menu" (whenever this venue has a menu) sits above the claim / pending action.
     const btns = [];
     if (shop.verified) {
-      btns.push('<button class="cm-popup__btn" data-act="menu">Bekijk menu</button>');
+      btns.push('<button class="fm-popup__btn" data-act="menu">Bekijk menu</button>');
     } else {
-      if (shop.hasMenu) btns.push('<button class="cm-popup__btn" data-act="menu">Open menu</button>');
-      const ghost = shop.hasMenu ? ' cm-popup__btn--ghost' : '';
-      if (shop.pendingClaim) btns.push(`<button class="cm-popup__btn${ghost}" data-act="pending">Pending claim</button>`);
-      else btns.push(`<button class="cm-popup__btn${ghost}" data-act="claim">Claim deze zaak</button>`);
+      if (shop.hasMenu) btns.push('<button class="fm-popup__btn" data-act="menu">Open menu</button>');
+      const ghost = shop.hasMenu ? ' fm-popup__btn--ghost' : '';
+      if (shop.pendingClaim) btns.push(`<button class="fm-popup__btn${ghost}" data-act="pending">Pending claim</button>`);
+      else btns.push(`<button class="fm-popup__btn${ghost}" data-act="claim">Claim deze zaak</button>`);
     }
 
     const popup = document.createElement('div');
-    popup.className = 'cm-popup';
+    popup.className = 'fm-popup';
     popup.innerHTML = `
-      <div class="cm-popup__head"><strong>${shop.name}</strong>${rating}</div>
+      <div class="fm-popup__head"><strong>${shop.name}</strong></div>
       ${shop.verified
-        ? '<span class="cm-popup__verified">✓ Echt menu</span>'
+        ? '<span class="fm-popup__verified">✓ Echt menu</span>'
         : shop.pendingClaim
-          ? '<span class="cm-popup__pending">⏳ Claim in behandeling</span>'
-          : (shop.comingSoon ? '<span class="cm-popup__soon">Nog te claimen</span>' : '')}
-      ${shop.discountPct > 0 ? `<span class="cm-popup__discount">−${shop.discountPct}% via FairMenu</span>` : ''}
-      <span class="cm-popup__area">${meta}</span>
-      <div class="cm-popup__btns">${btns.join('')}</div>`;
+          ? '<span class="fm-popup__pending">⏳ Claim in behandeling</span>'
+          : (shop.comingSoon ? '<span class="fm-popup__soon">Nog te claimen</span>' : '')}
+      ${shop.discountPct > 0 ? `<span class="fm-popup__discount">−${shop.discountPct}% via FairMenu</span>` : ''}
+      <span class="fm-popup__area">${meta}</span>
+      <div class="fm-popup__btns">${btns.join('')}</div>`;
     popup.querySelector('[data-act="menu"]')?.addEventListener('click', () => onOpenRef?.(shop));
     popup.querySelector('[data-act="claim"]')?.addEventListener('click', () => { window.location.href = `https://fairmenu.app/claim?claim=${shop.id}`; });
     popup.querySelector('[data-act="pending"]')?.addEventListener('click', () => { window.location.href = `https://${shop.id}.fairmenu.app`; });
@@ -227,8 +209,8 @@ export function showUserLocation(fix) {
       fillColor: '#1a73e8', fillOpacity: 0.10,
     });
     locMarker = L.marker(ll, {
-      pane: 'cm-locate', interactive: false, keyboard: false,
-      icon: L.divIcon({ className: 'cm-loc-dot', iconSize: [18, 18], iconAnchor: [9, 9] }),
+      pane: 'fm-locate', interactive: false, keyboard: false,
+      icon: L.divIcon({ className: 'fm-loc-dot', iconSize: [18, 18], iconAnchor: [9, 9] }),
     });
     locateLayer.addLayer(locCircle).addLayer(locMarker);
   } else {
@@ -252,9 +234,3 @@ export function focusUser(fix, radiusM) {
 }
 
 export const mapReady = () => !!map;
-
-// Recompute size when the container becomes visible (Leaflet needs a laid-out
-// container). Call this each time the map view is shown.
-export function refreshMap() {
-  if (map) setTimeout(() => map.invalidateSize(), 0);
-}

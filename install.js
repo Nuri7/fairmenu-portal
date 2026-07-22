@@ -8,7 +8,7 @@ const DISMISS_KEY = 'fm:install-dismissed';
 
 // Draait de app al als geïnstalleerde PWA? Dan is elke hint ruis.
 // matchMedia dekt Android/desktop, navigator.standalone is de iOS-variant.
-export const isStandalone = () =>
+const isStandalone = () =>
   window.matchMedia('(display-mode: standalone)').matches ||
   window.navigator.standalone === true;
 

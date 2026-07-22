@@ -32,8 +32,8 @@ export function getWallet() { return wallet; }
 // ===========================================================================
 // localStorage backend
 // ===========================================================================
-const PROFILE_KEY = 'cm_profile';
-const FAV_KEY = 'cm_favorites';
+const PROFILE_KEY = 'fm_profile';
+const FAV_KEY = 'fm_favorites';
 
 function localHydrate() {
   try { profile = JSON.parse(localStorage.getItem(PROFILE_KEY)); } catch { profile = null; }

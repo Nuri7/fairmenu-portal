@@ -1,4 +1,4 @@
--- Choicemaker portal — accounts + favorites schema.
+-- FairMenu portal — accounts + favorites schema.
 -- Run this in the Supabase SQL editor after creating the project.
 -- Auth (email/password) is handled by Supabase's built-in auth.users.
 

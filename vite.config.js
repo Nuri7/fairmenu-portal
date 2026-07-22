@@ -6,7 +6,7 @@ export default defineConfig({
   plugins: [
     VitePWA({
       registerType: 'autoUpdate',
-      includeAssets: ['logo.png', 'images/*.png'],
+      includeAssets: ['logo.png', 'apple-touch-icon.png', 'icons/*.png'],
       workbox: {
         // Take over immediately on update so a new deploy replaces the old
         // build without needing two reloads, and purge stale precaches.
@@ -26,26 +26,6 @@ export default defineConfig({
               cacheName: 'osm-tiles',
               cacheableResponse: { statuses: [0, 200] },
               expiration: { maxEntries: 600, maxAgeSeconds: 60 * 60 * 24 * 30 },
-            }
-          },
-          // Vendor photos you've opened → available offline. Immutable per
-          // filename → CacheFirst. Match by path (robust for <img> and fetch).
-          {
-            urlPattern: ({ url }) => url.pathname.startsWith('/menus/images/'),
-            handler: 'CacheFirst',
-            options: {
-              cacheName: 'vendor-photos',
-              expiration: { maxEntries: 400, maxAgeSeconds: 60 * 60 * 24 * 30 },
-            }
-          },
-          // Menus you've opened → work offline; refresh in the background when
-          // online (StaleWhileRevalidate) so edits still propagate.
-          {
-            urlPattern: ({ url }) => url.pathname.startsWith('/menus/') && url.pathname.endsWith('.json'),
-            handler: 'StaleWhileRevalidate',
-            options: {
-              cacheName: 'menus',
-              expiration: { maxEntries: 80, maxAgeSeconds: 60 * 60 * 24 * 14 },
             }
           },
           // App shell — network-first so online users get the latest build.

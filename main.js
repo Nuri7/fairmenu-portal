@@ -5,7 +5,6 @@ import { ensureMap, filterMap, shopsWithin, showUserLocation, clearUserLocation,
          focusUser, nearestShop, mapReady } from './map.js';
 import { requestPosition, cancelPosition, isStale, fmtDist, fmtAccuracy,
          geoSupported, GEO_ACCURACY_MAX } from './geo.js';
-import placesData from './public/places-data.json';
 import { getFavorites, isLoggedIn, initAuth, onAuthChange } from './auth.js';
 import { openProfile, finishTopUp } from './profile.js';
 import { initInstallHint } from './install.js';
@@ -22,16 +21,12 @@ registerSW({
   onOfflineReady() { console.log('PWA is ready to work offline'); },
 });
 
-// Open a café from a map pin: menu/info overlay for our own listings, external
-// link for the (rare) externally-hosted ones.
 function openShop(shop) {
-  if (shop.comingSoon || shop.inPortal || shop.pendingClaim) openVendor(shop);
-  else if (shop.links?.menu) window.open(shop.links.menu, '_blank', 'noopener');
-  else openVendor(shop);
+  openVendor(shop);
 }
 
 // The map is the whole app now — init it once on load.
-// Shops come from the FairMenu database (baked list as offline fallback).
+// Shops come from the FairMenu database.
 const shops = await loadShops();
 const mapView = document.getElementById('mapView');
 ensureMap(mapView, shops, openShop);
@@ -101,7 +96,7 @@ function applyFilters(base, term, { radius = true } = {}) {
     list = list.filter((s) =>
       norm(s.name).includes(q) ||
       norm(s.location).includes(q) ||
-      norm(placesData[s.id]?.address).includes(q)
+      norm(s.address).includes(q)
     );
   }
   return list;
@@ -308,7 +303,7 @@ document.querySelectorAll('.nav-item[data-view]').forEach((a) => {
 });
 
 // A login-gated action (favorite heart) asks the app to open the profile modal.
-window.addEventListener('cm:need-login', (e) => openProfile(e.detail?.hint));
+window.addEventListener('fm:need-login', (e) => openProfile(e.detail?.hint));
 
 // Installatiehint. Bewust ná de eerste render en met vertraging: bij het laden
 // concurreert hij met de kaart, en een hint die je meteen overvalt wordt

@@ -3,9 +3,9 @@
 // De positie leeft alleen in het geheugen van deze sessie — niet in localStorage,
 // niet naar Supabase, nooit in een URL.
 
-export const GEO_TIMEOUT_MS = 20_000;   // iOS klokt door tijdens de toestemmingsdialoog
-export const GEO_MAX_AGE_MS = 60_000;   // gecachete fix mag max 1 min oud zijn
-export const GEO_STALE_MS = 5 * 60_000; // eigen fix daarna als verlopen zien
+const GEO_TIMEOUT_MS = 20_000;   // iOS klokt door tijdens de toestemmingsdialoog
+const GEO_MAX_AGE_MS = 60_000;   // gecachete fix mag max 1 min oud zijn
+const GEO_STALE_MS = 5 * 60_000; // eigen fix daarna als verlopen zien
 export const GEO_ACCURACY_MAX = 2_000;  // > 2 km: filteren is verzonnen precisie
 
 export const geoSupported = () =>
@@ -13,7 +13,7 @@ export const geoSupported = () =>
 
 // NL-copy per faalroute. err.message van de browser is Engels en geprefixt met
 // "Geolocation error:" — die wordt nooit getoond.
-export const GEO_MSG = {
+const GEO_MSG = {
   unsupported: 'Locatie werkt niet in deze browser.',
   offline: 'Je bent offline — je locatie bepalen lukt nu niet.',
   1: "Locatie is geblokkeerd. Zet 'm aan via Instellingen › Privacy en beveiliging › Locatievoorzieningen.",
