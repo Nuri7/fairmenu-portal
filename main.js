@@ -107,7 +107,9 @@ function runSearch(term) {
   const nearby = nearbyOn && !!userFix;
   const list = applyFilters(shops, term);
   setPlaceCount(list.length, nearby ? `binnen ${fmtDist(effectiveRadius())}` : '');
-  filterMap(list, nearby ? 'user' : 'results');
+  // With Verified active, fit every verified venue — including reliable menus
+  // just outside Amsterdam — so the count and visible map tell the same story.
+  filterMap(list, nearby ? 'user' : (verifiedOnly ? 'verified' : 'results'));
   if (nearby) focusUser(userFix, effectiveRadius());
 }
 

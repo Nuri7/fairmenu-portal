@@ -177,10 +177,14 @@ function renderMarkers(shops, mode) {
     markers.push([c, marker]);
     if (inAmsterdam(c)) amsBounds.push(c);
   }
-  if (mode === 'results') {
+  if (mode === 'results' || mode === 'verified') {
     if (markers.length === 1) {
       map.setView(markers[0][0], 16);
       markers[0][1].openPopup();
+    } else if (mode === 'verified' && markers.length) {
+      // The verified set is intentionally small. Show all of it, including
+      // reliable menus outside Amsterdam, rather than silently cropping them.
+      map.fitBounds(markers.map((m) => m[0]), { padding: [40, 40], maxZoom: 15 });
     } else if (amsBounds.length) {
       map.fitBounds(amsBounds, { padding: [40, 40], maxZoom: 15 });
     } else if (markers.length) {
