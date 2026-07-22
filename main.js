@@ -59,12 +59,14 @@ if (topupId) {
 const searchInput = document.getElementById('searchInput');
 const clearBtn = document.getElementById('searchClear');
 const verifiedBtn = document.getElementById('verifiedFilter');
+const reviewBtn = document.getElementById('reviewFilter');
 const discountBtn = document.getElementById('discountFilter');
 const locateBtn = document.getElementById('locateBtn');
 const geoStatus = document.getElementById('geoStatus');
 const RADIUS_LADDER = [1000, 2000, 5000];
 let searchTimer = null;
 let verifiedOnly = false;
+let reviewOnly = false;
 let discountOnly = false;
 let userFix = null;        // {lat,lng,accuracy,timestamp} of null — alleen bruikbare fixes
 let fixRejected = false;   // laatste meting was te onnauwkeurig → volgende tik meet vers
@@ -87,8 +89,12 @@ function effectiveRadius() {
 // die de verified-pil of de zoekterm juist van de kaart heeft gehaald.
 function applyFilters(base, term, { radius = true } = {}) {
   const q = norm((term || '').trim());
-  // verified eerst: de haversine over ~850 items draait zo op de kleinste lijst.
-  let list = verifiedOnly ? base.filter((s) => s.verified) : base;
+  // Menu-status eerst: de haversine over ~850 items draait zo op de kleinste lijst.
+  let list = verifiedOnly
+    ? base.filter((s) => s.verified)
+    : reviewOnly
+      ? base.filter((s) => s.needsReview)
+      : base;
   // Direct na verified en vóór de radius: beide snijden goedkoop, de haversine niet.
   if (discountOnly) list = list.filter((s) => s.discountPct > 0);
   if (radius && nearbyOn && userFix) list = shopsWithin(list, userFix, effectiveRadius());
@@ -109,7 +115,8 @@ function runSearch(term) {
   setPlaceCount(list.length, nearby ? `binnen ${fmtDist(effectiveRadius())}` : '');
   // With Verified active, fit every verified venue — including reliable menus
   // just outside Amsterdam — so the count and visible map tell the same story.
-  filterMap(list, nearby ? 'user' : (verifiedOnly ? 'verified' : 'results'));
+  const mapMode = verifiedOnly ? 'verified' : (reviewOnly ? 'review' : 'results');
+  filterMap(list, nearby ? 'user' : mapMode);
   if (nearby) focusUser(userFix, effectiveRadius());
 }
 
@@ -117,8 +124,27 @@ function runSearch(term) {
 // independently of whether the venue has already been claimed.
 verifiedBtn.addEventListener('click', () => {
   verifiedOnly = !verifiedOnly;
+  if (verifiedOnly) {
+    reviewOnly = false;
+    reviewBtn.classList.remove('is-on');
+    reviewBtn.setAttribute('aria-pressed', 'false');
+  }
   verifiedBtn.classList.toggle('is-on', verifiedOnly);
   verifiedBtn.setAttribute('aria-pressed', String(verifiedOnly));
+  runSearch(searchInput.value);
+});
+
+// Candidate menu sources are deliberately a separate queue from Verified.
+// Activating one status filter turns the other off so the meaning stays clear.
+reviewBtn.addEventListener('click', () => {
+  reviewOnly = !reviewOnly;
+  if (reviewOnly) {
+    verifiedOnly = false;
+    verifiedBtn.classList.remove('is-on');
+    verifiedBtn.setAttribute('aria-pressed', 'false');
+  }
+  reviewBtn.classList.toggle('is-on', reviewOnly);
+  reviewBtn.setAttribute('aria-pressed', String(reviewOnly));
   runSearch(searchInput.value);
 });
 

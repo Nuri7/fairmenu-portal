@@ -288,11 +288,11 @@ function renderMenu(root, menu) {
     body.appendChild(interestBox(menu.vendor.slug));
   }
 
-  // Honesty banner for auto-seeded vendors whose prices aren't confirmed yet.
+  // Honesty banner for candidate menus that still need a human review.
   if (menu.prices_verified === false) {
     const note = document.createElement('div');
     note.className = 'd-pricenote';
-    note.textContent = 'ⓘ Prijzen indicatief — controleer ter plaatse';
+    note.textContent = 'ⓘ Conceptmenu — bron en prijzen moeten nog worden gecontroleerd';
     body.appendChild(note);
   }
 

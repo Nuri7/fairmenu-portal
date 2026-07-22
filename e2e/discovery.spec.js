@@ -18,8 +18,15 @@ test('loads venues, searches, filters and clears the result', async ({ page }) =
   await expect(page.locator('#placeCount')).toHaveText('1 zaak');
 
   const verified = page.getByRole('button', { name: 'Verified' });
+  const review = page.getByRole('button', { name: 'Needs review' });
   await verified.click();
   await expect(verified).toHaveAttribute('aria-pressed', 'true');
+
+  await review.click();
+  await expect(review).toHaveAttribute('aria-pressed', 'true');
+  await expect(verified).toHaveAttribute('aria-pressed', 'false');
+  await verified.click();
+  await expect(review).toHaveAttribute('aria-pressed', 'false');
 
   const discount = page.getByRole('button', { name: 'Met korting' });
   await discount.click();

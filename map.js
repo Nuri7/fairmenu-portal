@@ -66,6 +66,16 @@ function pinIcon(shop) {
        </svg>`;
     return L.divIcon({ html, className: 'fm-pin fm-pin--verified', iconSize: [34, 46], iconAnchor: [17, 46], popupAnchor: [0, -44] });
   }
+  if (shop.needsReview) {
+    const html =
+      `<svg width="34" height="46" viewBox="0 0 34 46" xmlns="http://www.w3.org/2000/svg">
+         <path d="M17 0C7.6 0 0 7.6 0 17c0 11.3 17 29 17 29s17-17.7 17-29C34 7.6 26.4 0 17 0z" fill="#d88716"/>
+         <circle cx="17" cy="17" r="9" fill="#FAFAED"/>
+         <path d="M17 11.5v7" stroke="#d88716" stroke-width="2.7" stroke-linecap="round"/>
+         <circle cx="17" cy="22.7" r="1.5" fill="#d88716"/>
+       </svg>`;
+    return L.divIcon({ html, className: 'fm-pin fm-pin--review', iconSize: [34, 46], iconAnchor: [17, 46], popupAnchor: [0, -44] });
+  }
   const fill = shop.pendingClaim ? '#e0a83b' : (shop.comingSoon ? '#a8a48f' : '#4A5D23');
   const html =
     `<svg width="30" height="40" viewBox="0 0 30 40" xmlns="http://www.w3.org/2000/svg">
@@ -134,7 +144,10 @@ function renderMarkers(shops, mode) {
   for (const shop of shops) {
     const c = shopCoords(shop);
     if (!c) continue;
-    const marker = L.marker(c, { icon: pinIcon(shop), zIndexOffset: shop.verified ? 1000 : 0 });
+    const marker = L.marker(c, {
+      icon: pinIcon(shop),
+      zIndexOffset: shop.verified ? 1000 : (shop.needsReview ? 800 : 0),
+    });
 
     const addr = shop.address ? shop.address.split(',')[0] : shop.location;
     // Bij een fix die te grof is om op te filteren, is "op 340 m" verzonnen
@@ -148,7 +161,9 @@ function renderMarkers(shops, mode) {
     // "Open menu" sits directly above the claim action.
     const btns = [];
     if (shop.hasMenu) {
-      const menuLabel = shop.claimed ? 'Bekijk menu' : 'Open menu';
+      const menuLabel = shop.needsReview
+        ? 'Controleer menu'
+        : (shop.claimed ? 'Bekijk menu' : 'Open menu');
       btns.push(`<button class="fm-popup__btn" data-act="menu">${menuLabel}</button>`);
     }
     if (!shop.claimed) {
@@ -163,6 +178,8 @@ function renderMarkers(shops, mode) {
       <div class="fm-popup__head"><strong>${shop.name}</strong></div>
       ${shop.verified
         ? '<span class="fm-popup__verified">✓ Echt menu</span>'
+        : shop.needsReview
+          ? '<span class="fm-popup__review">! Needs review</span>'
         : shop.pendingClaim
           ? '<span class="fm-popup__pending">⏳ Claim in behandeling</span>'
           : (shop.comingSoon ? '<span class="fm-popup__soon">Nog te claimen</span>' : '')}
@@ -177,13 +194,13 @@ function renderMarkers(shops, mode) {
     markers.push([c, marker]);
     if (inAmsterdam(c)) amsBounds.push(c);
   }
-  if (mode === 'results' || mode === 'verified') {
+  if (mode === 'results' || mode === 'verified' || mode === 'review') {
     if (markers.length === 1) {
       map.setView(markers[0][0], 16);
       markers[0][1].openPopup();
-    } else if (mode === 'verified' && markers.length) {
-      // The verified set is intentionally small. Show all of it, including
-      // reliable menus outside Amsterdam, rather than silently cropping them.
+    } else if ((mode === 'verified' || mode === 'review') && markers.length) {
+      // Status filters must show their complete queue, including locations
+      // outside Amsterdam, so the header count matches what the map represents.
       map.fitBounds(markers.map((m) => m[0]), { padding: [40, 40], maxZoom: 15 });
     } else if (amsBounds.length) {
       map.fitBounds(amsBounds, { padding: [40, 40], maxZoom: 15 });

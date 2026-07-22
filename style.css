@@ -368,9 +368,11 @@ body {
 .map-chips {
   position: absolute; top: 116px; left: 50%; transform: translateX(-50%);
   z-index: 800; display: flex; align-items: center; gap: 8px;
-  max-width: calc(100% - 24px);
+  width: calc(100% - 24px); max-width: 576px; justify-content: center;
+  overflow-x: auto; scrollbar-width: none;
 }
-.verified-filter, .discount-filter {
+.map-chips::-webkit-scrollbar { display: none; }
+.verified-filter, .review-filter, .discount-filter {
   display: inline-flex; align-items: center; gap: 7px;
   padding: 7px 14px; border-radius: 999px; cursor: pointer;
   background: #fff; color: var(--text-dark); border: 1px solid var(--border-color);
@@ -381,10 +383,16 @@ body {
 .verified-filter.is-on { background: #d33a2c; color: #fff; border-color: #d33a2c; }
 .verified-filter.is-on .verified-filter__dot { background: #fff; }
 
+.review-filter__dot { width: 9px; height: 9px; border-radius: 50%; background: #d88716; flex: none; }
+.review-filter.is-on { background: #d88716; color: #fff; border-color: #d88716; }
+.review-filter.is-on .review-filter__dot { background: #fff; }
+
 /* Eigen kleur zodat de twee filters op de kaart niet op elkaar lijken. */
 .discount-filter__dot { width: 9px; height: 9px; border-radius: 50%; background: #0f6e6a; flex: none; }
 .discount-filter.is-on { background: #0f6e6a; color: #fff; border-color: #0f6e6a; }
 .discount-filter.is-on .discount-filter__dot { background: #fff; }
+
+@media (max-width: 420px) { .map-chips { justify-content: flex-start; } }
 
 /* ---- Locatie: zwevende kaartknop + statuspil (linksonder) ----
    position: fixed (niet absolute zoals .map-search) omdat #app min-height:100vh
@@ -476,11 +484,17 @@ body {
   .locate-btn svg { width: 24px; height: 24px; }
 }
 
-.fm-pin--verified { background: none; border: none; }
+.fm-pin--verified, .fm-pin--review { background: none; border: none; }
 .fm-popup__verified {
   display: inline-block; margin: 2px 0 6px;
   font-size: 0.72rem; font-weight: 700; color: #d33a2c;
   background: #fbe6e3; padding: 2px 8px; border-radius: 999px;
+}
+
+.fm-popup__review {
+  display: inline-block; margin: 2px 0 6px;
+  font-size: 0.72rem; font-weight: 700; color: #8a5208;
+  background: #fff0d9; padding: 2px 8px; border-radius: 999px;
 }
 
 .fm-popup__discount {
