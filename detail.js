@@ -299,7 +299,7 @@ function renderMenu(root, menu) {
   // Category chips
   const nav = document.createElement('nav');
   nav.className = 'd-cats';
-  const cats = [{ id: '__all', name: 'Alles' }, ...menu.categories];
+  const cats = menu.categories;
   nav.innerHTML = cats.map((c, i) =>
     `<button class="d-cat${i === 0 ? ' active' : ''}" data-cat="${c.id}">${c.name}</button>`
   ).join('');
@@ -317,7 +317,7 @@ function renderMenu(root, menu) {
     grid.innerHTML = '';
     const items = menu.items
       .filter(i => i.available !== false)
-      .filter(i => catId === '__all' || i.category === catId);
+      .filter(i => i.category === catId);
     if (!items.length) { grid.innerHTML = '<p class="d-empty">Niets in deze categorie.</p>'; return; }
     for (const it of items) grid.appendChild(itemCard(menu, it, ccy, locale));
   };
@@ -329,7 +329,7 @@ function renderMenu(root, menu) {
     btn.classList.add('active');
     paint(btn.dataset.cat);
   });
-  paint('__all');
+  paint(cats[0]?.id);
   updateCartBar();
 }
 

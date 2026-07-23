@@ -47,7 +47,10 @@ test('opens a venue menu and maintains the cart total', async ({ page }) => {
   await popup.getByRole('button', { name: /Bekijk menu|Open menu/ }).click();
 
   const dialog = page.getByRole('dialog');
+  await expect(dialog.getByRole('button', { name: 'Alles', exact: true })).toHaveCount(0);
+  await expect(dialog.getByRole('button', { name: 'Koffie', exact: true })).toHaveClass(/active/);
   await expect(dialog).toContainText('Cappuccino');
+  await expect(dialog).not.toContainText('Verse muntthee');
   await dialog.getByRole('button', { name: '+ Toevoegen' }).click();
   await expect(page.locator('.d-cartbar__n')).toHaveText('1');
   await expect(page.locator('.d-cartbar__total')).toContainText('€ 3,50');
